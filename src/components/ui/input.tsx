@@ -1,8 +1,8 @@
 'use client'
+import { LucideEye, LucideEyeOff } from '@/components/icons'
+import { cn } from '@/lib/utils'
 import { cva, type VariantProps } from 'class-variance-authority'
 import React, { type ReactElement, useId, useState } from 'react'
-import { cn } from '@/lib/utils'
-import { SolarEyeClosedLinear, SolarEyeLinear } from '@/components/icons'
 
 const inputContainer = cva(
   [
@@ -69,7 +69,7 @@ export default function Input({
 
   const PasswordToggle = (
     <IconBox onClick={() => setIsVisible((p) => !p)} role="button">
-      {isVisible ? <SolarEyeClosedLinear /> : <SolarEyeLinear />}
+      {isVisible ? <LucideEyeOff /> : <LucideEye />}
     </IconBox>
   )
   const PrefixIcon =

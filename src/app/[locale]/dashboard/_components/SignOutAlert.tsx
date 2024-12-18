@@ -1,6 +1,4 @@
-import { useTranslations } from 'next-intl'
-import { useUserStore } from '@/lib/context/AuthProvider'
-import { useMutation } from '@tanstack/react-query'
+import { LucideLogOut } from '@/components/icons'
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -11,10 +9,12 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { Button } from '@/components/ui/button'
-import { SolarLogoutOutline } from '@/components/icons'
-import React, { type PropsWithChildren } from 'react'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import { useUserStore } from '@/lib/context/AuthProvider'
+import { useMutation } from '@tanstack/react-query'
+import { useTranslations } from 'next-intl'
+import { type PropsWithChildren } from 'react'
 
 export function SignOutAlert({ children }: PropsWithChildren) {
   const t = useTranslations('DashboardSidebar')
@@ -43,7 +43,7 @@ export function SignOutAlert({ children }: PropsWithChildren) {
                   size="none"
                   className="mt-auto text-error max-lg:justify-start"
                 >
-                  <SolarLogoutOutline className="size-8" />
+                  <LucideLogOut className="size-8" />
                   <span className="lg:hidden">{t('log_out')}</span>
                 </Button>
               </TooltipTrigger>

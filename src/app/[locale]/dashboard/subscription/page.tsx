@@ -1,6 +1,6 @@
 'use client'
 
-import { SolarCheckCircleLinear } from '@/components/icons'
+import { LucideCircleCheck } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
@@ -105,7 +105,7 @@ function SubscriptionCard({
 function Feature({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2">
-      <SolarCheckCircleLinear className="size-6 text-green-500" />
+      <LucideCircleCheck className="size-6 text-green-500" />
       <span className="text-desk-body-lg text-gray-800">{children}</span>
     </div>
   )

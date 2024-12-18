@@ -1,9 +1,9 @@
 'use client'
 
-import type { ReactNode } from 'react'
-import * as React from 'react'
 import type * as LabelPrimitive from '@radix-ui/react-label'
 import { Slot } from '@radix-ui/react-slot'
+import type { ReactNode } from 'react'
+import * as React from 'react'
 import {
   Controller,
   type ControllerProps,
@@ -13,9 +13,9 @@ import {
   useFormContext,
 } from 'react-hook-form'
 
-import { cn } from '@/lib/utils'
+import { LucideCircleX } from '@/components/icons'
 import { Label } from '@/components/ui/label'
-import { SolarCloseCircleLinear } from '@/components/icons'
+import { cn } from '@/lib/utils'
 
 const Form = FormProvider
 
@@ -156,7 +156,7 @@ const FormMessage = React.forwardRef<
       className={cn('text-sm font-medium text-destructive', className)}
       {...props}
     >
-      {error && <SolarCloseCircleLinear className="me-1 inline-block size-4" />}
+      {error && <LucideCircleX className="me-1 inline-block size-4" />}
       {translator ? translator(String(body)) : body}
     </p>
   )
@@ -164,12 +164,12 @@ const FormMessage = React.forwardRef<
 FormMessage.displayName = 'FormMessage'
 
 export {
-  useFormField,
   Form,
-  FormItem,
-  FormLabel,
   FormControl,
   FormDescription,
-  FormMessage,
   FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  useFormField,
 }

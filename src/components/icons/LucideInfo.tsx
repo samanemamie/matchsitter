@@ -1,16 +1,18 @@
 import type { SVGProps } from 'react'
-import React from 'react'
 
-export function SolarHamburgerMenuLinear(props: SVGProps<SVGSVGElement>) {
+export function LucideInfo(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" {...props}>
-      <path
+      <g
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
-        strokeWidth={1.5}
-        d="M20 7H4m16 5H4m16 5H4"
-      ></path>
+        strokeLinejoin="round"
+        strokeWidth={2}
+      >
+        <circle cx={12} cy={12} r={10}></circle>
+        <path d="M12 16v-4m0-4h.01"></path>
+      </g>
     </svg>
   )
 }
