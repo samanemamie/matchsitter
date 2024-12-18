@@ -95,7 +95,7 @@ const SignUpComponent = () => {
             {t('submit')}
           </Button>
 
-          <p className="flex items-center justify-center gap-1 text-desk-body-lg text-gray-800">
+          <p className="text-desk-body-lg flex items-center justify-center gap-1 text-gray-800">
             {t('have_account_message')}
             <Link role="button" className="text-desk-button-lg text-primary" href="/signin">
               {t('signIn')}

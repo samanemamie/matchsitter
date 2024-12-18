@@ -57,7 +57,7 @@ export function SignOutAlert({ children }: PropsWithChildren) {
 
       <AlertDialogContent className="!rounded-250 max-md:max-w-96">
         <AlertDialogHeader>
-          <AlertDialogTitle className="text-center !text-desk-body-lg">
+          <AlertDialogTitle className="!text-desk-body-lg text-center">
             {tAlert('title')}
           </AlertDialogTitle>
           <AlertDialogDescription></AlertDialogDescription>

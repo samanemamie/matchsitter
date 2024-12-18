@@ -1,10 +1,10 @@
-import prettier from 'eslint-plugin-prettier'
+import { FlatCompat } from '@eslint/eslintrc'
+import js from '@eslint/js'
 import typescriptEslint from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
+import prettier from 'eslint-plugin-prettier'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import js from '@eslint/js'
-import { FlatCompat } from '@eslint/eslintrc'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -29,6 +29,7 @@ const configs = [
       'src/lib/typescript/types/database.types.ts',
       'src/lib/typescript/types/supabase.type.ts',
       'tailwind.config.ts',
+      '**/public/',
     ],
   },
   ...compat.extends('eslint:recommended', 'next/core-web-vitals', 'prettier'),

@@ -30,8 +30,8 @@ const buttonVariants = cva(
         none: [],
       },
       size: {
-        lg: 'h-12 px-8 text-desk-button-lg',
-        sm: 'h-10 px-4 text-desk-button-sm',
+        lg: 'text-desk-button-lg h-12 px-8',
+        sm: 'text-desk-button-sm h-10 px-4',
         'icon-lg': 'size-10 md:size-12',
         'icon-md': 'size-10',
         'icon-sm': 'size-8',

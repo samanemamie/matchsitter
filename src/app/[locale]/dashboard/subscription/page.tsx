@@ -64,15 +64,15 @@ function SubscriptionCard({
   return (
     <Card
       key={subscription.name}
-      className="min-h-[450px] w-full space-y-0 rounded-250 border-none shadow-normal shadow-gray-500/20 md:max-w-[368px]"
+      className="shadow-normal min-h-[450px] w-full space-y-0 rounded-250 border-none shadow-gray-500/20 md:max-w-[368px]"
     >
       <CardHeader className="flex-col gap-6">
-        <CardTitle className="text-center text-desk-h1 text-primary-800">
+        <CardTitle className="text-desk-h1 text-center text-primary-800">
           {subscription.name}
         </CardTitle>
         <div className="relative text-center">
           {noPrice && (
-            <div className="absolute inset-0 z-10 flex items-center justify-center text-desk-body-lg text-gray-800">
+            <div className="text-desk-body-lg absolute inset-0 z-10 flex items-center justify-center text-gray-800">
               Please contact for price.
             </div>
           )}

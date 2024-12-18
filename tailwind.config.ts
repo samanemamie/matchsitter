@@ -8,195 +8,36 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
-      fontSize: {
-        //desktop sizes
-        'desk-h1': [
-          '32px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 700,
-          },
-        ],
-        'desk-h2': [
-          '28px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'desk-h3': [
-          '24px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'desk-h4': [
-          '20px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'desk-h5': [
-          '18px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'desk-h6': [
-          '16px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'desk-title-lg': [
-          '20px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'desk-title-md': [
-          '16px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'desk-title-sm': [
-          '14px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'desk-body-lg': [
-          '16px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 400,
-          },
-        ],
-        'desk-body-sm': [
-          '14px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 300,
-          },
-        ],
-        'desk-button-lg': [
-          '16px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'desk-button-sm': [
-          '14px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'desk-label': [
-          '14px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'desk-input': [
-          '16px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 400,
-          },
-        ],
-        //mobile sizes
-        'mob-h1': [
-          '28px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 700,
-          },
-        ],
-        'mob-h2': [
-          '24px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'mob-h3': [
-          '20px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'mob-h4': [
-          '18px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'mob-h5': [
-          '16px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'mob-h6': [
-          '14px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'mob-title-lg': [
-          '16px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'mob-title-md': [
-          '14px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'mob-title-sm': [
-          '12px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 600,
-          },
-        ],
-        'mob-body-lg': [
-          '14px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 400,
-          },
-        ],
-        'mob-body-sm': [
-          '12px',
-          {
-            lineHeight: 'normal',
-            fontWeight: 300,
-          },
-        ],
+      width: {
+        '68': '17rem',
+      },
+      height: {
+        '68': '17rem',
+      },
+      padding: {
+        '68': '17rem',
+      },
+      margin: {
+        '68': '17rem',
+      },
+      translate: {
+        '68': '17rem',
+      },
+      backgroundImage: {
+        score: 'linear-gradient(90deg, #FF513A 0%, #FF993A 40.22%, #FACD53 69.98%, #3FC276 87.5%)',
       },
       colors: {
-        //start custom colors
+        ring: 'hsl(var(--ring))',
+        foreground: 'hsl(var(--foreground))',
+        input: 'hsl(var(--input))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           50: 'hsl(var(--primary-50))',
@@ -210,98 +51,333 @@ export default {
           800: 'hsl(var(--primary-800))',
           900: 'hsl(var(--primary-900))',
         },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          50: 'hsl(var(--secondary-50))',
-          100: 'hsl(var(--secondary-100))',
-          200: 'hsl(var(--secondary-200))',
-          300: 'hsl(var(--secondary-300))',
-          400: 'hsl(var(--secondary-400))',
-          500: 'hsl(var(--secondary-500))',
-          600: 'hsl(var(--secondary-600))',
-          700: 'hsl(var(--secondary-700))',
-          800: 'hsl(var(--secondary-800))',
-          900: 'hsl(var(--secondary-900))',
+        surface: {
+          DEFAULT: 'hsl(var(--surface))',
         },
-        gray: {
-          50: 'hsl(var(--gray-50))',
-          100: 'hsl(var(--gray-100))',
-          200: 'hsl(var(--gray-200))',
-          300: 'hsl(var(--gray-300))',
-          400: 'hsl(var(--gray-400))',
-          500: 'hsl(var(--gray-500))',
-          600: 'hsl(var(--gray-600))',
-          700: 'hsl(var(--gray-700))',
-          800: 'hsl(var(--gray-800))',
-          900: 'hsl(var(--gray-900))',
+        border: {
+          100: 'hsl(var(--border-100))',
+          200: 'hsl(var(--border-200))',
+          300: 'hsl(var(--border-300))',
         },
-        success: {
-          DEFAULT: 'hsl(var(--success))',
-          light: 'hsl(var(--success-light))',
-          dark: 'hsl(var(--success-dark))',
-        },
-        error: {
-          DEFAULT: 'hsl(var(--error))',
-          light: 'hsl(var(--error-light))',
-          dark: 'hsl(var(--error-dark))',
-        },
-        warning: {
-          DEFAULT: 'hsl(var(--warning))',
-          light: 'hsl(var(--warning-light))',
-          dark: 'hsl(var(--warning-dark))',
-        },
-        info: {
-          DEFAULT: 'hsl(var(--info))',
-          light: 'hsl(var(--info-light))',
-          dark: 'hsl(var(--info-dark))',
+        heading: 'hsl(var(--heading))',
+        body: {
+          50: 'hsl(var(--body-50))',
+          100: 'hsl(var(--body-100))',
+          200: 'hsl(var(--body-200))',
+          300: 'hsl(var(--body-300))',
+          400: 'hsl(var(--body-400))',
         },
 
-        //end custom colors
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
+        background: {
+          50: 'hsl(var(--background-50))',
+          100: 'hsl(var(--background-100))',
+          200: 'hsl(var(--background-200))',
+          300: 'hsl(var(--background-300))',
+          400: 'hsl(var(--background-400))',
         },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
+
+        success: 'hsl(var(--success))',
+        success_light: 'hsl(var(--success-light))',
+        success_dark: 'hsl(var(--success-dark))',
+
+        error: 'hsl(var(--error))',
+        error_light: 'hsl(var(--error-light))',
+        error_dark: 'hsl(var(--error-dark))',
+
+        warning: 'hsl(var(--warning))',
+        warning_light: 'hsl(var(--warning-light))',
+        warning_dark: 'hsl(var(--warning-dark))',
+
+        info: 'hsl(var(--info))',
+        info_light: 'hsl(var(--info-light))',
+        info_dark: 'hsl(var(--info-dark))',
+
+        icon: {
+          500: 'hsl(var(--icon-500))',
+          600: 'hsl(var(--icon-600))',
+          700: 'hsl(var(--icon-700))',
+          800: 'hsl(var(--icon-800))',
         },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))',
+
+        neutral: {
+          100: 'hsl(var(--neutral-100))',
+          300: 'hsl(var(--neutral-300))',
+          500: 'hsl(var(--neutral-500))',
+          900: 'hsl(var(--neutral-900))',
         },
       },
       borderRadius: {
-        50: 'var(--rounded-50)',
-        100: 'var(--rounded-100)',
-        150: 'var(--rounded-150)',
-        200: 'var(--rounded-200)',
-        250: 'var(--rounded-250)',
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+        32: '32px',
+        50: '5px',
+        80: '8px',
+        100: '10px',
+        150: '15px',
+        200: '20px',
+        250: '25px',
+        3600: '360px',
       },
+      screens: {
+        mb: '640px',
+        ds: '1024px',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+        'up-down': {
+          '0%, 100%': { top: '100%' },
+          '50%': { top: '0%' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'up-down': 'up-down 4s ease-in-out infinite',
+      },
+      fontSize: {
+        'size-heading-1-ds': [
+          '56px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-heading-1-mb': [
+          '28px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-heading-2-ds': [
+          '40px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-heading-2-mb': [
+          '24px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-heading-3-ds': [
+          '32px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-heading-3-mb': [
+          '20px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-heading-4-ds': [
+          '24px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-heading-4-mb': [
+          '18px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-heading-5-ds': [
+          '20px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-heading-5-mb': [
+          '16px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-heading-6-ds': [
+          '18px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-heading-6-mb': [
+          '14px',
+          {
+            fontWeight: 700,
+          },
+        ],
+        'size-title-lg-ds': [
+          '20px',
+          {
+            fontWeight: 500,
+          },
+        ],
+        'size-title-lg-mb': [
+          '16px',
+          {
+            fontWeight: 600,
+          },
+        ],
+        'size-title-md-ds': [
+          '16px',
+          {
+            lineHeight: '26px',
+            fontWeight: 500,
+          },
+        ],
+        'size-title-md-mb': [
+          '14px',
+          {
+            fontWeight: 600,
+          },
+        ],
+        'size-title-sm-ds': [
+          '14px',
+          {
+            lineHeight: '22px',
+            fontWeight: 500,
+          },
+        ],
+        'size-title-sm-mb': [
+          '12px',
+          {
+            fontWeight: 600,
+          },
+        ],
+        'size-body-lg-ds': [
+          '16px',
+          {
+            lineHeight: '28px',
+            fontWeight: 400,
+          },
+        ],
+        'size-body-lg-mb': [
+          '14px',
+          {
+            lineHeight: '26px',
+            fontWeight: 400,
+          },
+        ],
+        'size-body-sm-ds': [
+          '14px',
+          {
+            lineHeight: '24px',
+            fontWeight: 400,
+          },
+        ],
+        'size-body-sm-mb': [
+          '12px',
+          {
+            lineHeight: '22px',
+            fontWeight: 400,
+          },
+        ],
+        'size-button-lg-ds': [
+          '16px',
+          {
+            fontWeight: 600,
+          },
+        ],
+        'size-button-lg-mb': [
+          '16px',
+          {
+            fontWeight: 600,
+          },
+        ],
+        'size-button-md-ds': [
+          '14px',
+          {
+            fontWeight: 600,
+          },
+        ],
+        'size-button-md-mb': [
+          '14px',
+          {
+            fontWeight: 600,
+          },
+        ],
+        'size-button-sm-ds': [
+          '14px',
+          {
+            fontWeight: 600,
+          },
+        ],
+        'size-button-sm-mb': [
+          '12px',
+          {
+            fontWeight: 600,
+          },
+        ],
+        'size-label-ds': [
+          '14px',
+          {
+            fontWeight: 500,
+          },
+        ],
+        'size-label-mb': [
+          '12px',
+          {
+            fontWeight: 500,
+          },
+        ],
+        'size-input-ds': [
+          '16px',
+          {
+            fontWeight: 400,
+          },
+        ],
+        'size-input-mb': [
+          '14px',
+          {
+            fontWeight: 400,
+          },
+        ],
+        'size-caption-ds': [
+          '12px',
+          {
+            fontWeight: 400,
+          },
+        ],
+        'size-caption-mb': [
+          '12px',
+          {
+            fontWeight: 400,
+          },
+        ],
+        current_price: [
+          '18px',
+          {
+            fontWeight: 600,
+          },
+        ],
+        calendar_time: [
+          '10px',
+          {
+            fontWeight: 600,
+          },
+        ],
+      },
+
       boxShadow: {
-        soft: '0px -10px 40px 0px',
-        normal: '0px 10px 60px 0px',
+        dropDown: '0px 10px 20px hsla(220, 3%, 49%, 0.25)',
+        tabs: '0px 4px 4px hsla(220, 5%, 45%, 0.05)',
+        categories: '0px 15px 15px -8px #021814',
+        success: '0px 18px 30px hsla(163, 66%, 45%, 0.10)',
+        error: '0px 18px 30px hsla(347, 78%, 45%, 0.1)',
+        subscription: '0px 10px 60px 0px #5C688026',
+        menu: '0px 8px 20px 0px #0000001A',
+        toolbar: '0px 0px 5.1px 0px #EDD5B7',
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('autoprefixer')],
 } satisfies Config

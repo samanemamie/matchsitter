@@ -100,7 +100,7 @@ const SignInComponent = () => {
             {user !== null ? t('loading') : t('submit')}
           </Button>
 
-          <p className="flex items-center justify-center gap-1 text-desk-body-lg text-gray-800">
+          <p className="text-desk-body-lg flex items-center justify-center gap-1 text-gray-800">
             {t('dont_have_account')}
             <Link role="button" className="text-desk-button-lg text-primary" href="/signup">
               {t('signup')}

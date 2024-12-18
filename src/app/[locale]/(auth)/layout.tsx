@@ -15,7 +15,7 @@ const AuthLayout = async ({ children }: AuthLayoutProps) => {
           <strong className="font-bold">.</strong>
         </div>
       </h3>
-      <div className="relative flex min-h-[650px] w-full flex-col items-center gap-16 rounded-t-250 bg-gray-50 px-5 py-8 shadow-soft shadow-[#6780B214] xl:max-w-7xl">
+      <div className="shadow-soft relative flex min-h-[650px] w-full flex-col items-center gap-16 rounded-t-250 bg-gray-50 px-5 py-8 shadow-[#6780B214] xl:max-w-7xl">
         <BackgroundImages />
         <div className="relative h-12 w-40">
           <Image
