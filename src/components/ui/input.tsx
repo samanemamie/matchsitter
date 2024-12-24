@@ -8,8 +8,8 @@ const inputContainer = cva(
   [
     'box-border overflow-hidden',
     'group flex rounded-100 outline-none', //temporary
-    'relative w-auto bg-gray-50',
-    'border-2 text-gray-900 placeholder-gray-600', //override
+    'relative w-auto bg-background-50',
+    'border-[1.5px] text-body-400 placeholder-body-200', //override
   ],
   {
     variants: {
@@ -23,15 +23,15 @@ const inputContainer = cva(
           'text-gray-600 focus-within:border-success', //override
         ],
         default: [
-          'default border-primary text-gray-600 shadow-black/5',
-          'border-gray-200 focus-within:border-primary', //override
+          'default',
+          'border-border-100 focus-within:border-primary', //override
         ],
       },
       variant: {
         default: ['focus-within:border-2'],
       },
       size: {
-        default: ['h-[46px] text-input'],
+        default: ['h-[48px] text-input'],
       },
     },
     defaultVariants: {
@@ -97,8 +97,8 @@ export default function Input({
         id={id}
         type={isVisible ? (type === 'password' ? 'text' : type) : type}
         className={cn([
-          'typo-desk-body-sm w-full border-none px-3 placeholder-gray-600 outline-none',
-          'bg-transparent text-gray-900',
+          'typo-desk-body-sm w-full border-none px-3 placeholder-body-200 outline-none',
+          'bg-transparent text-body-400',
           {
             'ps-0': !!PrefixIcon,
             'pe-0': !!SuffixIcon,
@@ -116,7 +116,7 @@ function IconBox({ className, ...props }: React.ComponentProps<'label'>) {
     <label
       {...props}
       className={cn(
-        'flex h-full w-12 flex-shrink-0 items-center justify-center text-gray-700',
+        'flex h-full w-12 flex-shrink-0 items-center justify-center text-icon-700',
         className
       )}
     />

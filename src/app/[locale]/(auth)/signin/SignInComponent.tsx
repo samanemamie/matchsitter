@@ -1,10 +1,6 @@
 'use client'
-import type { SignInFormProps } from '@/lib/typescript/types/forms.type'
-import React from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useMutation } from '@tanstack/react-query'
-import { signInSchema } from '@/lib/form/validations/auth.schema'
+import { Input } from '@/components/form/elements'
+import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
@@ -13,11 +9,14 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
-import { Input } from '@/components/form/elements'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 import { useUserStore } from '@/lib/context/AuthProvider'
+import { signInSchema } from '@/lib/form/validations/auth.schema'
+import type { SignInFormProps } from '@/lib/typescript/types/forms.type'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useMutation } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
+import Link from 'next/link'
+import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 
 const SignInComponent = () => {
@@ -69,7 +68,6 @@ const SignInComponent = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="password"
@@ -80,7 +78,7 @@ const SignInComponent = () => {
                 <Input
                   type="password"
                   className="w-full"
-                  placeholder={t('password_label')}
+                  placeholder="Enter at least 8 Character"
                   visiblePassword="suffix"
                   {...field}
                 />
@@ -89,11 +87,12 @@ const SignInComponent = () => {
             </FormItem>
           )}
         />
-        <p className="mt-4 flex justify-end">
-          <Link className="text-desk-button-lg text-primary" href="/forget-password">
-            {t('forget')}
-          </Link>
-        </p>
+        <Link
+          className="mt-4 flex justify-end self-end text-size-button-sm-mb text-primary sm:text-size-button-sm-ds"
+          href="/forget-password"
+        >
+          {t('forget')}
+        </Link>
 
         <div className="mt-auto flex w-full flex-col gap-4 pt-10">
           <Button disabled={!form.formState.isValid || !!user} loading={isPending}>

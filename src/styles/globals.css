@@ -101,7 +101,7 @@
     --secondary800: 39 82% 15%;
     --secondary900: 39 85% 8%;
 
-    --surface: 0 0% 91%;
+    --surface: 8 20% 98%;
 
     --border-100: 200 26% 95%;
     --border-200: 200 15% 91%;
@@ -145,5 +145,10 @@
     --info: 210 92% 63%;
     --info-light: 210 71% 95%;
     --info-dark: 210 52% 10%;
+  }
+}
+@layer base {
+  body {
+    @apply bg-surface;
   }
 }

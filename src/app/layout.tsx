@@ -1,3 +1,4 @@
+import QRCodeComponent from '@/components/common/cards/QRCode'
 import WrappedProviders from '@/components/providers'
 import { HOST } from '@/config'
 import { getAlternativeLocales, getLocaleWithProps } from '@/i18n/i18n-configs'
@@ -43,7 +44,13 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           'overflow-x-hidden antialiased'
         )}
       >
-        <WrappedProviders>{children}</WrappedProviders>
+        <WrappedProviders>
+          <div className="hidden sm:flex sm:h-dvh sm:w-dvw sm:items-center sm:justify-center">
+            <QRCodeComponent />
+          </div>
+
+          <main className="overflow-hidden sm:hidden">{children}</main>
+        </WrappedProviders>
       </body>
     </html>
   )

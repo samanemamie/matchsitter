@@ -1,3 +1,5 @@
-import SignInPage from './signin/page'
+import RolePage from '@/app/[locale]/role/page'
 
-export default SignInPage
+export default function page() {
+  return <RolePage />
+}

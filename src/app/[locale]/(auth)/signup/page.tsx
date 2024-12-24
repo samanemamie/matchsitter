@@ -1,6 +1,6 @@
-import React from 'react'
-import { getTranslations } from 'next-intl/server'
 import SignUpComponent from '@/app/[locale]/(auth)/signup/SignUpComponent'
+import { getTranslations } from 'next-intl/server'
+import React from 'react'
 
 const SignUpPage = async () => {
   const t = await getTranslations('Auth.SignUp')

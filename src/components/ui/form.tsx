@@ -93,7 +93,7 @@ const FormLabel = React.forwardRef<
     <Label
       ref={ref}
       className={cn(
-        '!text-desk-label text-gray-900 disabled:text-gray-400 group-disabled:opacity-35',
+        '!text-size-label-mb !text-body-400 disabled:text-body-100 group-disabled:opacity-35 sm:!text-size-label-ds',
         className
       )}
       htmlFor={formItemId}
@@ -131,7 +131,7 @@ const FormDescription = React.forwardRef<
     <p
       ref={ref}
       id={formDescriptionId}
-      className={cn('text-muted-foreground text-sm', className)}
+      className={cn('text-size-caption-mb text-body-400 sm:text-size-caption-ds', className)}
       {...props}
     />
   )
@@ -153,10 +153,10 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cn('text-destructive text-sm font-medium', className)}
+      className={cn('text-size-caption-mb text-body-400 sm:text-size-caption-ds', className)}
       {...props}
     >
-      {error && <LucideCircleX className="me-1 inline-block size-4" />}
+      {error && <LucideCircleX className="me-1 inline-block size-4 !text-error" />}
       {translator ? translator(String(body)) : body}
     </p>
   )

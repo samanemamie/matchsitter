@@ -1,7 +1,8 @@
 {
   "UserRole": {
-    "crm_member": "CRM Member",
-    "crm_management": "CRM Management"
+    "title": "Choose your role",
+    "parent": "Parent",
+    "babysitter": "Babysitter"
   },
   "Routes": {
     "dashboard": "Dashboard",
@@ -31,7 +32,8 @@
       "signIn": "Login"
     },
     "SignIn": {
-      "title": "Login",
+      "parent_title": "Login as a Parent",
+      "babysitter_title": "Login as a babysitter",
       "email_label": "Email",
       "password_label": "Password",
       "submit": "Login",
@@ -73,5 +75,8 @@
       "main_goal_len": "Main goal must be at least 16 characters long.",
       "invalid_role": "Please select your role."
     }
+  },
+  "QRCode": {
+    "title": "Scan the QR code with your mobile to open the app."
   }
 }
