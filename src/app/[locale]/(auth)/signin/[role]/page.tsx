@@ -5,7 +5,6 @@ import { getTranslations } from 'next-intl/server'
 
 const SignInPage = async ({ params }: { params: Promise<{ role: AuthRoleProps }> }) => {
   const { role } = await params
-
   const t = await getTranslations('Auth.SignIn')
 
   return (

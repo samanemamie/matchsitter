@@ -25,11 +25,13 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL(`/${locale}`, req.url))
   }
 
-  if (
-    (user && role && url.pathname.startsWith(`/${locale}/signin`)) ||
-    url.pathname.startsWith(`/${locale}/signup`)
-  ) {
-    return NextResponse.redirect(new URL(`/${locale}/dashboard/${role}`, req.url))
+  if (role) {
+    if (
+      (user && url.pathname.startsWith(`/${locale}/signin`)) ||
+      url.pathname.startsWith(`/${locale}/signup`)
+    ) {
+      return NextResponse.redirect(new URL(`/${locale}/dashboard/${role}`, req.url))
+    }
   }
 
   if (user && role && url.pathname === `/${locale}`) {
