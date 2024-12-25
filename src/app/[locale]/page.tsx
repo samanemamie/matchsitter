@@ -1,8 +1,8 @@
-import { Button } from '@/components/ui/button'
 import Paragraph from '@/components/ui/Paragraph'
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 
+import { buttonVariants } from '@/components/ui/button'
 import icon from '@public/icon.png'
 import Link from 'next/link'
 
@@ -18,12 +18,13 @@ const RolePage = async () => {
           {t('title')}
         </Paragraph>
         <div className="w-full max-w-md space-y-3.5">
-          <Button className="w-full">
-            <Link href={`/signin/parent`}>{t('parent')}</Link>
-          </Button>
-          <Button variant="outline" className="w-full text-primary">
-            <Link href={`/signin/babysitter`}>{t('babysitter')}</Link>
-          </Button>
+          <Link className={buttonVariants({ variant: 'default' })} href={`/signin/parent`}>
+            {t('parent')}
+          </Link>
+
+          <Link className={buttonVariants({ variant: 'outline' })} href={`/signin/babysitter`}>
+            {t('babysitter')}
+          </Link>
         </div>
       </div>
     </div>
