@@ -1,10 +1,10 @@
+import ToasterComponent from '@/components/common/ToasterComponent'
 import NextIntlProvider from '@/components/providers/NextIntlProvider'
 import ReactQueryProvider from '@/components/providers/ReactQueryProvider'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
-import ToasterComponent from '@/components/common/ToasterComponent'
-import type { PropsWithChildren } from 'react'
 import AuthProvider from '@/lib/context/AuthProvider'
 import { getCurrentUser } from '@/lib/supabase/server'
+import type { PropsWithChildren } from 'react'
 
 type WrappedProvidersProps = PropsWithChildren
 const WrappedProviders = async ({ children }: WrappedProvidersProps) => {

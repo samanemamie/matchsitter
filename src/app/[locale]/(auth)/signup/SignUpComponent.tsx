@@ -1,10 +1,7 @@
 'use client'
-import type { SignInFormProps } from '@/lib/typescript/types/forms.type'
-import React from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useMutation } from '@tanstack/react-query'
-import { signInSchema } from '@/lib/form/validations/auth.schema'
+import type { AuthRoleProps } from '@/app/[locale]/(auth)/layout'
+import { Input } from '@/components/form/elements'
+import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
@@ -13,17 +10,24 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
-import { Input } from '@/components/form/elements'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import Paragraph from '@/components/ui/Paragraph'
 import { useUserStore } from '@/lib/context/AuthProvider'
+import { signInSchema } from '@/lib/form/validations/auth.schema'
+import type { SignInFormProps } from '@/lib/typescript/types/forms.type'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useMutation } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 
-const SignUpComponent = () => {
+const SignUpComponent = ({ role }: { role: AuthRoleProps }) => {
   const router = useRouter()
+
   const signUp = useUserStore((state) => state.signUp)
+  const { user } = useUserStore((state) => state)
+
   const { mutate, isPending } = useMutation({
     mutationFn: (data: SignInFormProps) => signUp(data),
   })
@@ -39,18 +43,20 @@ const SignUpComponent = () => {
   })
 
   async function onSubmit(data: SignInFormProps) {
-    mutate(data, {
-      onError(error) {
-        toast.error(error.message)
-      },
-      onSuccess(result) {
-        if (result.error) return toast.error(result.error.message || 'something_went_wrong')
-        if (result.data.user) {
-          toast.success('signup_success')
-          return router.push('/signin')
-        }
-      },
-    })
+    mutate(
+      { ...data, role },
+      {
+        onError(error) {
+          toast.error(error.message)
+        },
+        onSuccess(result) {
+          if (result.error) return toast.error(result.error.message || 'something_went_wrong')
+          if (result.data.user) {
+            return router.replace(role === 'parent' ? '/dashboard/parent' : '/dashboard/babysitter')
+          }
+        },
+      }
+    )
   }
 
   return (
@@ -90,17 +96,25 @@ const SignUpComponent = () => {
           )}
         />
 
-        <div className="mt-auto flex w-full flex-col gap-4 pt-10">
-          <Button disabled={!form.formState.isValid} loading={isPending}>
-            {t('submit')}
+        <div className="mt-auto flex w-full flex-col gap-4 pt-8">
+          <Button disabled={!form.formState.isValid || !!user} loading={isPending}>
+            {user !== null ? t('loading') : t('submit')}
           </Button>
 
-          <p className="text-desk-body-lg flex items-center justify-center gap-1 text-gray-800">
+          <Paragraph
+            variant="body-300"
+            size="size-body-sm"
+            className="flex items-center justify-center gap-2"
+          >
             {t('have_account_message')}
-            <Link role="button" className="text-desk-button-lg text-primary" href="/signin">
+            <Link
+              role="button"
+              className="text-size-button-sm-mb text-primary sm:text-size-button-sm-ds"
+              href={`/signin/${role}`}
+            >
               {t('signIn')}
             </Link>
-          </p>
+          </Paragraph>
         </div>
       </form>
     </Form>

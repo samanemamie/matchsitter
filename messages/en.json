@@ -24,12 +24,14 @@
   },
   "Auth": {
     "SignUp": {
-      "title": "Register",
+      "parent_title": "Register as a Parent",
+      "babysitter_title": "Register as a Parent",
       "email_label": "Email",
       "password_label": "Password",
       "submit": "Register",
       "have_account_message": "Already have an account?",
-      "signIn": "Login"
+      "signIn": "Login",
+      "loading": "You are logging in..."
     },
     "SignIn": {
       "parent_title": "Login as a Parent",

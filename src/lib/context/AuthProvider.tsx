@@ -1,22 +1,22 @@
 'use client'
-import { createContext, memo, type PropsWithChildren, useContext, useState } from 'react'
-import { createStore, type StoreApi, useStore } from 'zustand'
+import useSupabase from '@/lib/supabase/client'
+import type { SignInFormProps } from '@/lib/typescript/types/forms.type'
 import type {
   AuthError,
   AuthResponse,
   AuthTokenResponsePassword,
   SignInWithPasswordCredentials,
   SignOut,
-  SignUpWithPasswordCredentials,
   User,
 } from '@supabase/supabase-js'
-import useSupabase from '@/lib/supabase/client'
+import { createContext, memo, type PropsWithChildren, useContext, useState } from 'react'
+import { createStore, type StoreApi, useStore } from 'zustand'
 
 type AuthProvider = {
   user: User | null
   authorized: boolean
   signIn: (credentials: SignInWithPasswordCredentials) => Promise<AuthTokenResponsePassword>
-  signUp: (payload: SignUpWithPasswordCredentials) => Promise<AuthResponse>
+  signUp: (payload: SignInFormProps) => Promise<AuthResponse>
   signOut: (options?: SignOut) => Promise<{ error: AuthError | null }>
 }
 
@@ -36,9 +36,17 @@ const AuthProvider = memo(function UserProvider({ children, initial }: UserProvi
         return result
       },
       signUp: async (credentials) => {
-        const result = await supabaseClient.auth.signUp(credentials)
-        await supabaseClient.auth.signOut()
-        set({ user: null })
+        const result = await supabaseClient.auth.signUp({
+          email: credentials.email,
+          password: credentials.password,
+          options: {
+            data: {
+              role: credentials.role,
+              email: credentials.email,
+            },
+          },
+        })
+        set({ user: result.data.user })
         return result
       },
       signOut: async () => {

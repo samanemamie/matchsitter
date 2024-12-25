@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     canonical: '/',
     languages: getAlternativeLocales(),
   },
-  title: 'machSitter - Childcare and Medical Consultation Services',
+  title: 'matchSitter - Childcare and Medical Consultation Services',
   description:
-    'machSitter is an innovative platform for parents to find childcare providers and access medical services from specialized doctors. We bridge the gap between families and care providers, ensuring peace of mind and reliability for your needs.',
+    'matchSitter is an innovative platform for parents to find childcare providers and access medical services from specialized doctors. We bridge the gap between families and care providers, ensuring peace of mind and reliability for your needs.',
   keywords: [
-    'machSitter',
+    'matchSitter',
     'childcare',
     'child medical services',
     'medical consultation',

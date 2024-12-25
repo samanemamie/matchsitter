@@ -1,5 +1,5 @@
-import { z } from 'zod'
 import { USER_ROLE } from '@/data/mocks/user.data'
+import { z } from 'zod'
 
 export const signInSchema = z.object({
   email: z.string().email({ message: 'invalid_email' }),
@@ -10,6 +10,12 @@ export const signInSchema = z.object({
     .regex(/[A-Z]/, { message: 'password_uppercase' })
     .regex(/[0-9]/, { message: 'password_digits' })
     .regex(/[\W_]/, { message: 'password_symbol' }),
+
+  role: z
+    .enum(['parent', 'babysitter'], {
+      message: 'This field is required',
+    })
+    .optional(),
 })
 
 export const completeRegistrationSchema = z.object({

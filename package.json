@@ -1,5 +1,5 @@
 {
-  "name": "machSitter",
+  "name": "matchSitter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,6 +22,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-switch": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.1.5",
+    "@supabase-cache-helpers/postgrest-react-query": "^1.11.4",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.47.3",
     "@tanstack/react-query": "^5.62.3",

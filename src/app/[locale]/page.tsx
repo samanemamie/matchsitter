@@ -9,11 +9,11 @@ import Link from 'next/link'
 const RolePage = async () => {
   const t = await getTranslations('UserRole')
   return (
-    <div className="flex h-screen w-full flex-col">
+    <div className="flex min-h-dvh w-full flex-col">
       <div className="flex flex-shrink-0 justify-center pt-6">
-        <Image src={icon} alt="machsitter logo" className="h-7 w-auto" draggable={false} />
+        <Image src={icon} alt="matchSitter logo" className="h-7 w-auto" draggable={false} />
       </div>
-      <div className="flex w-full flex-grow flex-col items-center justify-center gap-6 px-4">
+      <div className="flex w-full flex-1 flex-col items-center justify-center gap-6 px-4">
         <Paragraph variant="body-400" size="size-title-md">
           {t('title')}
         </Paragraph>
