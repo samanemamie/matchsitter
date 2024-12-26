@@ -80,5 +80,8 @@
   },
   "QRCode": {
     "title": "Scan the QR code with your mobile to open the app."
+  },
+  "SelectPlanPage": {
+    "title": "Please Select one of the plans"
   }
 }

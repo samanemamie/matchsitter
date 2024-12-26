@@ -5,16 +5,8 @@ import { getLocale } from 'next-intl/server'
 
 export type Direction = 'rtl' | 'ltr'
 
-export type I18nLocale = 'fa' | 'en' | 'fr' | 'es' | 'de' | 'it' | 'sv' | 'nl'
-export type LanguageCode =
-  | 'fa-IR'
-  | 'en-US'
-  | 'fr-FR'
-  | 'es-ES'
-  | 'de-DE'
-  | 'it-IT'
-  | 'sv-SE'
-  | 'nl-NL'
+export type I18nLocale = 'fa' | 'en'
+export type LanguageCode = 'fa-IR' | 'en-US'
 
 interface I18nLocaleProps {
   direction: Direction
