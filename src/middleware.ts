@@ -37,7 +37,7 @@ export default async function middleware(req: NextRequest) {
   if (user && role && url.pathname === `/${locale}`) {
     return NextResponse.redirect(new URL(`/${locale}/dashboard/${role}`, req.url))
   }
-
+  req.headers.set('x-current-path', req.nextUrl.pathname)
   return intlMiddleware(req)
 }
 

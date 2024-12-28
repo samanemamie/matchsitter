@@ -1,4 +1,3 @@
-import { USER_ROLE } from '@/data/mocks/user.data'
 import { z } from 'zod'
 
 export const signInSchema = z.object({
@@ -16,10 +15,4 @@ export const signInSchema = z.object({
       message: 'This field is required',
     })
     .optional(),
-})
-
-export const completeRegistrationSchema = z.object({
-  company_name: z.string().min(3, { message: 'company_name_len' }),
-  main_goal: z.string().min(16, { message: 'main_goal_len' }),
-  role: z.enum(USER_ROLE, { message: 'invalid_role' }),
 })

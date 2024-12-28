@@ -34,3 +34,8 @@ export const Sleep = (delay = 1000) => {
 export function splitPathname(pathname: string, depth = 2) {
   return pathname.split('/').at(depth)
 }
+
+export function getSplitPathname(pathName: string, locale: string) {
+  const localeRegex = new RegExp(`^/${locale}`)
+  return pathName.replace(localeRegex, '')
+}
