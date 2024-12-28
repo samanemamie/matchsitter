@@ -2,7 +2,7 @@ import SelectComponent from '@/components/pages/dashboard/parentHome/SelectCompo
 
 export default function ParentHomePageComponent({ searchParams }: { searchParams: string }) {
   return (
-    <div>
+    <div className="px-4">
       <SelectComponent searchParams={searchParams!} />
     </div>
   )

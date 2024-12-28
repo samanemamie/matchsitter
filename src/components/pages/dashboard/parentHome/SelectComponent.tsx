@@ -18,9 +18,13 @@ export default function SelectComponent({ searchParams }: { searchParams: string
   const [babysittersState, setBabysittersState] = useState<SelecBabysitterStateTypeItemType>(
     searchParams as SelecBabysitterStateTypeItemType
   )
+
   return (
-    <Select defaultValue={SELECT_BABY_SITTER[0].value}>
-      <SelectTrigger className="w-full">
+    <Select
+      defaultValue={SELECT_BABY_SITTER[0].value}
+      onValueChange={(value) => setBabysittersState(value as SelecBabysitterStateTypeItemType)}
+    >
+      <SelectTrigger isSelected={babysittersState} className="w-full">
         <SelectValue placeholder="role_placeholder" />
       </SelectTrigger>
       <SelectContent>
