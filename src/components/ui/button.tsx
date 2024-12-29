@@ -30,6 +30,11 @@ const buttonVariants = cva(
           'disabled:text-body-100', //disabled
         ],
         backIcon: ['bg-background-200 text-icon-800'],
+        mark: [
+          'rounded-400 bg-background-200 text-body-300',
+          'text-body-400 focus:bg-background-300', //focus
+          'disabled:text-body-100', //disabled
+        ],
         flat: ['text-icon-800'],
         none: [],
       },
@@ -37,7 +42,10 @@ const buttonVariants = cva(
         lg: 'h-14 px-[81px] text-size-button-lg-ds sm:text-size-button-lg-mb',
         md: 'h-12 px-[81px] text-size-button-md-mb sm:text-size-button-md-ds',
         sm: 'h-10 px-[81px] text-size-button-sm-mb sm:text-size-button-sm-ds',
-        link: 'text-size-button-lg-ds sm:text-size-button-lg-mb',
+        link: '',
+        'link-lg': 'h-14 text-size-button-lg-ds sm:text-size-button-lg-mb',
+        'link-md': 'h-12 text-size-button-md-mb sm:text-size-button-md-ds',
+        'link-sm': 'h-10 text-size-button-sm-mb sm:text-size-button-sm-ds',
         backIcon: 'h-9 w-9 text-xl',
         'icon-lg': 'size-10 md:size-12',
         'icon-md': 'size-10',
@@ -50,6 +58,11 @@ const buttonVariants = cva(
         variant: ['none'],
         size: ['lg', 'sm'],
         className: 'h-auto rounded-none px-2',
+      },
+      {
+        variant: ['mark'],
+        size: ['none'],
+        className: 'h-[30px] px-2 text-size-body-sm-mb sm:text-size-body-sm-ds',
       },
     ],
     defaultVariants: {

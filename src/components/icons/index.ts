@@ -1,3 +1,4 @@
+export { LucidStarFill } from './fiil/LucidStarFill'
 export { LucideChevronDown } from './LucidChevronDown'
 export { LucideChevronLeft } from './LucidChevronLeft'
 export { LucideChevronRight } from './LucidChevronRight'

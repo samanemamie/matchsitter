@@ -83,5 +83,16 @@
   },
   "SelectPlanPage": {
     "title": "Please Select one of the plans"
+  },
+  "BabySitterCard": {
+    "review": "Review",
+    "price": "$",
+    "hour": "hour",
+    "age": "Age:",
+    "experience": "Experience:",
+    "distance": "Distance:",
+    "distance_unit": "KM",
+    "book": "Book Now",
+    "more": "More Details"
   }
 }

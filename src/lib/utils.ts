@@ -1,5 +1,6 @@
 import tailwindConfig from '@/../tailwind.config'
 import { type ClassValue, clsx } from 'clsx'
+import type { ReadonlyURLSearchParams } from 'next/navigation'
 import { extendTailwindMerge } from 'tailwind-merge'
 
 const customTwMerge = extendTailwindMerge({
@@ -38,4 +39,14 @@ export function splitPathname(pathname: string, depth = 2) {
 export function getSplitPathname(pathName: string, locale: string) {
   const localeRegex = new RegExp(`^/${locale}`)
   return pathName.replace(localeRegex, '')
+}
+
+export const createQueryString = (
+  searchParams: ReadonlyURLSearchParams,
+  name: string,
+  value: string
+) => {
+  const params = new URLSearchParams(searchParams.toString())
+  params.set(name, value)
+  return params.toString()
 }

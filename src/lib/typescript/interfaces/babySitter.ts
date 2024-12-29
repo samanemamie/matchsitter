@@ -6,11 +6,16 @@ export interface BabySitterInterface {
   id: number
   name: Record<I18nLocale, string>
   status: BabySitterStatusEnum
-  sos: boolean
+  sos?: boolean
   img: StaticImageData
   star: number
   review: number
+  price: number
   age: number
   experience: number
   distance: number
+  location?: {
+    lat: number
+    lng: number
+  }
 }

@@ -152,3 +152,11 @@
     @apply bg-surface;
   }
 }
+
+.iconify-normal > g,
+.iconify-normal > path {
+  @apply stroke-[1.5px];
+}
+.container-overflow::-webkit-scrollbar {
+  @apply hidden h-0 w-0;
+}

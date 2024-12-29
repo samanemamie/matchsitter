@@ -20,7 +20,7 @@ export default function ParentHomePageComponent({ searchParams }: { searchParams
         setBabysittersState={setBabysittersState}
         babysittersState={babysittersState}
       />
-      <BabySitterCardsComponent babysittersState={babysittersState} />
+      <BabySitterCardsComponent babysittersState={searchParams} />
     </div>
   )
 }
