@@ -47,7 +47,7 @@ export function Markers({ data, locale, selectedId, mapRef }: MarkersProps) {
               <div className="text-sm">
                 <p className="mb-1 font-semibold">{babySitter.name[locale]}</p>
                 <p className="text-gray-600">
-                  {babySitter.location && babySitter.location.lat.toFixed(4)},{' '}
+                  {babySitter.location && babySitter.location.lat.toFixed(4)},
                   {babySitter.location && babySitter.location.lng.toFixed(4)}
                 </p>
               </div>

@@ -26,7 +26,6 @@ export default function LocationBabySitterComponent({
       <MapComponent setLoading={setLoading} data={babySittersData} id={id} />
 
       <div className="absolute bottom-0 z-10 h-60 w-full bg-gradient-to-t from-gray-100 to-transparent"></div>
-
       {!loading && (
         <div className="container-overflow absolute -bottom-24 z-20 flex w-full max-w-full gap-4 overflow-x-auto px-2">
           {babySittersData.map((item: BabySitterInterface) => (

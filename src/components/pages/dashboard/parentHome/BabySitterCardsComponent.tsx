@@ -8,6 +8,7 @@ import LocationBabySitterComponent from '@/components/pages/dashboard/parentHome
 import { BabySitterStatusEnum, BabySitterStatusLabels } from '@/data/enums/dashboard'
 import { BABY_SITTER } from '@/data/mocks/babySitters'
 import { useLocaleWithProps } from '@/i18n/i18n-configs'
+import { useUserStore } from '@/lib/context/AuthProvider'
 import type { BabySitterInterface } from '@/lib/typescript/interfaces/babySitter'
 
 export default function BabySitterCardsComponent({
@@ -16,6 +17,8 @@ export default function BabySitterCardsComponent({
   babysittersState: string | undefined
 }) {
   const { locale } = useLocaleWithProps()
+  const { user } = useUserStore((state) => state)
+  const role = user?.user_metadata.role
 
   const defaultState = BabySitterStatusLabels[BabySitterStatusEnum.GENERAL][locale]
   const sosState = BabySitterStatusLabels[BabySitterStatusEnum.SOS][locale]
@@ -50,7 +53,10 @@ export default function BabySitterCardsComponent({
               experience={item.experience}
               distance={item.distance}
             />
-            <BabySitterCardFooter bookLink="/dashboard" moreLink="/dashboard" />
+            <BabySitterCardFooter
+              bookLink="/dashboard"
+              moreLink={`/dashboard/${role}/babysitter/${item.id}`}
+            />
           </BabySitterCard>
         ))
     }

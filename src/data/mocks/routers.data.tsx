@@ -52,6 +52,14 @@ export const PARENT_ROUTES: LinkInterface[] = [
     name: { en: 'Home', fa: '' },
     link: '/dashboard/parent',
     icon: LucideHome,
+    subLinks: [
+      {
+        id: 1,
+        name: { en: 'More Details', fa: '' },
+        link: '/dashboard/parent/babysitter',
+        icon: LucideHome,
+      },
+    ],
   },
   {
     id: 2,
