@@ -23,7 +23,7 @@ export default function SelectComponent({
 
   return (
     <Select
-      defaultValue={SELECT_BABY_SITTER[0].value}
+      defaultValue={babysittersState ? babysittersState : SELECT_BABY_SITTER[0].value}
       onValueChange={(value) => setBabysittersState(value as SelecBabysitterStateTypeItemType)}
     >
       <SelectTrigger isSelected={babysittersState} className="w-full">

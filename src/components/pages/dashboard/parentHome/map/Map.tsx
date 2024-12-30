@@ -13,12 +13,12 @@ import 'leaflet/dist/leaflet.css'
 interface MapProps {
   posix: LatLngExpression | LatLngTuple
   zoom?: number
-
   data?: BabySitterInterface[] | BabySitterInterface
   id: number | null
+  setLoading: (loading: boolean) => void
 }
 
-export default function Map({ id, data, zoom = 13, posix }: MapProps) {
+export default function Map({ setLoading, id, data, zoom = 13, posix }: MapProps) {
   const mapRef = useRef<L.Map | null>(null)
   const { locale } = useLocaleWithProps()
 
@@ -45,6 +45,7 @@ export default function Map({ id, data, zoom = 13, posix }: MapProps) {
       zoomControl={false}
       dragging={true}
       ref={mapRef}
+      whenReady={() => setLoading(false)}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'

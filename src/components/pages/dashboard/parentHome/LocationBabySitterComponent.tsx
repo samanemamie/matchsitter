@@ -19,15 +19,16 @@ export default function LocationBabySitterComponent({
 }) {
   const [id, setId] = useState<number | null>(null)
   const { locale } = useLocaleWithProps()
+  const [loading, setLoading] = useState(true)
 
   return (
-    <div>
-      <div className="relative mb-28 h-[60dvh] w-full">
-        <MapComponent data={babySittersData} id={id} />
+    <div className="relative mb-24 h-[60dvh] w-full">
+      <MapComponent setLoading={setLoading} data={babySittersData} id={id} />
 
-        <div className="absolute bottom-0 z-10 h-60 w-full bg-gradient-to-t from-gray-100 to-transparent"></div>
+      <div className="absolute bottom-0 z-10 h-60 w-full bg-gradient-to-t from-gray-100 to-transparent"></div>
 
-        <div className="container-overflow absolute -bottom-24 z-20 flex w-screen gap-4 overflow-y-auto px-2">
+      {!loading && (
+        <div className="container-overflow absolute -bottom-24 z-20 flex w-full max-w-full gap-4 overflow-x-auto px-2">
           {babySittersData.map((item: BabySitterInterface) => (
             <BabySitterCard
               className={cn('min-w-[272px]', { 'border border-primary': id == item.id })}
@@ -52,7 +53,7 @@ export default function LocationBabySitterComponent({
             </BabySitterCard>
           ))}
         </div>
-      </div>
+      )}
     </div>
   )
 }
