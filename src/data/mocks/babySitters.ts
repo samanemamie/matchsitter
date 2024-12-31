@@ -17,7 +17,7 @@ export const BABY_SITTER: BabySitterInterface[] = [
     img: alice,
     name: { en: 'Alice Smith', fa: 'آلیس اسمیت' },
     status: BabySitterStatusEnum.GENERAL,
-
+    bookings: 12,
     star: 5,
     review: 12,
 
@@ -32,7 +32,7 @@ export const BABY_SITTER: BabySitterInterface[] = [
     img: babySitter6,
     name: { en: 'John Doe', fa: 'جان دو' },
     status: BabySitterStatusEnum.GENERAL,
-
+    bookings: 12,
     star: 4.5,
     review: 8,
 
@@ -47,7 +47,7 @@ export const BABY_SITTER: BabySitterInterface[] = [
     img: babySitter2,
     name: { en: 'Emily Davis', fa: 'امیلی دیویس' },
     status: BabySitterStatusEnum.GENERAL,
-
+    bookings: 12,
     star: 4.8,
     review: 15,
 
@@ -62,7 +62,7 @@ export const BABY_SITTER: BabySitterInterface[] = [
     img: babySitter3,
     name: { en: 'Olivia Taylor', fa: 'اولیویا تیلور' },
     status: BabySitterStatusEnum.CERTIFIED,
-
+    bookings: 12,
     star: 5,
     review: 10,
 
@@ -77,7 +77,7 @@ export const BABY_SITTER: BabySitterInterface[] = [
     img: babySitter4,
     name: { en: 'Isabella Johnson', fa: 'ایزابل جانسون' },
     status: BabySitterStatusEnum.CERTIFIED,
-
+    bookings: 12,
     star: 4.2,
     review: 5,
 
@@ -92,7 +92,7 @@ export const BABY_SITTER: BabySitterInterface[] = [
     img: babySitter5,
     name: { en: 'Mia Wilson', fa: 'میا ویلسون' },
     status: BabySitterStatusEnum.CERTIFIED,
-
+    bookings: 12,
     star: 4.9,
     review: 18,
 
@@ -113,7 +113,7 @@ export const BABY_SITTER: BabySitterInterface[] = [
     img: babySitter1,
     name: { en: 'Ava Martinez', fa: 'اوا مارتینز' },
     status: BabySitterStatusEnum.GENERAL,
-
+    bookings: 12,
     star: 4.7,
     review: 14,
 
@@ -133,7 +133,7 @@ export const BABY_SITTER: BabySitterInterface[] = [
     img: babySitter7,
     name: { en: 'Sophia Hernandez', fa: 'سوفیا هرناندز' },
     status: BabySitterStatusEnum.GENERAL,
-
+    bookings: 12,
     star: 4.4,
     review: 7,
 
@@ -153,7 +153,7 @@ export const BABY_SITTER: BabySitterInterface[] = [
     img: babySitter8,
     name: { en: 'Charlotte Lopez', fa: 'شارلوت لوپز' },
     status: BabySitterStatusEnum.GENERAL,
-
+    bookings: 12,
     star: 5,
     review: 20,
 

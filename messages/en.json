@@ -94,5 +94,17 @@
     "distance_unit": "KM",
     "book": "Book Now",
     "more": "More Details"
+  },
+  "SingleBabysitter": {
+    "review": "Review",
+    "price": "$",
+    "hour": "hour",
+    "age": "Age:",
+    "experience": "Experience:",
+    "distance": "Distance:",
+    "bookings": "Bookings:",
+    "distance_unit": "KM",
+    "book": "Book Now",
+    "more": "More Details"
   }
 }

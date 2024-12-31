@@ -9,7 +9,7 @@ const inputContainer = cva(
     'box-border overflow-hidden',
     'group flex rounded-100 outline-none', //temporary
     'relative w-auto bg-background-50',
-    'border-[1.5px] text-body-400 placeholder-body-200', //override
+    'border-2 text-body-400 placeholder-body-200', //override
   ],
   {
     variants: {
@@ -97,7 +97,7 @@ export default function Input({
         id={id}
         type={isVisible ? (type === 'password' ? 'text' : type) : type}
         className={cn([
-          'typo-desk-body-sm w-full border-none px-3 placeholder-body-200 outline-none',
+          'w-full border-none px-3 text-size-input-mb placeholder-body-200 outline-none sm:text-size-input-ds',
           'bg-transparent text-body-400',
           {
             'ps-0': !!PrefixIcon,

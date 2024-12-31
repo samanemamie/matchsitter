@@ -110,6 +110,9 @@ importers:
       react-query:
         specifier: ^3.39.3
         version: 3.39.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-voice-visualizer:
+        specifier: ^2.0.4
+        version: 2.0.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       sonner:
         specifier: ^1.7.1
         version: 1.7.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -3733,6 +3736,12 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
+
+  react-voice-visualizer@2.0.4:
+    resolution: {integrity: sha512-YAdHVD/itgMsq7eLaoSX1dhl97PYHyRn1HnutuV4poygAhCXU/++BsEkmZMkxItpD7wadmayiVNX0BgMhuMgSg==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
 
   react@19.0.0:
     resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
@@ -8195,6 +8204,11 @@ snapshots:
       tslib: 2.8.1
     optionalDependencies:
       '@types/react': 19.0.1
+
+  react-voice-visualizer@2.0.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   react@19.0.0: {}
 

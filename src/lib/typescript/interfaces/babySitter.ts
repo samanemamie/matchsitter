@@ -5,6 +5,7 @@ import type { StaticImageData } from 'next/image'
 export interface BabySitterInterface {
   id: number
   name: Record<I18nLocale, string>
+  bookings: number
   status: BabySitterStatusEnum
   sos?: boolean
   img: StaticImageData
