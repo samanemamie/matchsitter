@@ -1,7 +1,8 @@
 'use client'
 
+import { LucidePlay, LucidPause } from '@/components/icons'
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { Pause, Play } from 'lucide-react'
 
 interface AudioVisualizerProps {
   onPlay?: () => void
@@ -21,25 +22,32 @@ export function AudioVisualizer({
   const calculatedProgress = (currentAudioTime / duration) * 100
 
   return (
-    <div className={cn('flex w-full max-w-2xl items-center gap-4', className)}>
-      <button
+    <div className={cn('flex items-center gap-2', className)}>
+      <Button
         onClick={onPlay}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#ff6b6b] transition-colors hover:bg-[#ff5252]"
+        variant="none"
+        size="none"
+        className="flex h-8 w-8 items-center justify-center rounded-3600 bg-primary"
         aria-label={isPausedRecordedAudio ? 'Play' : 'Pause'}
       >
         {isPausedRecordedAudio ? (
-          <Play className="h-6 w-6 fill-current text-white" />
+          <LucidePlay className="size-5 text-background-50" />
         ) : (
-          <Pause className="h-6 w-6 fill-current text-white" />
+          <LucidPause className="size-5 text-background-50" />
         )}
-      </button>
+      </Button>
 
-      <div className="relative flex h-6 flex-1 flex-col items-center justify-center rounded-350 bg-background-300 px-2">
-        <div className="relative h-2 w-full rounded-350 bg-background-50">
+      <div className="relative flex h-[22px] flex-1 flex-col items-center justify-center rounded-350 bg-background-300 px-2">
+        <div className="relative h-1 w-full rounded-350 bg-background-50">
           <div
-            className="absolute left-0 top-0 h-full rounded-350 bg-[#ff6b6b]"
+            className="absolute left-0 top-0 h-full rounded-350 bg-primary transition-all duration-300 ease-out"
             style={{ width: `${calculatedProgress}%` }}
-          />
+          >
+            <div
+              className="absolute -right-1 -top-[4px] size-3 rounded-full bg-primary shadow-md transition-all duration-300 ease-out"
+              style={{ transform: 'translateX(50%)' }}
+            />
+          </div>
         </div>
       </div>
     </div>

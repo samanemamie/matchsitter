@@ -39,7 +39,7 @@ import LoadingSection from '@/components/common/LoadingSection'
 import { useEffect } from 'react'
 import { useVoiceVisualizer, VoiceVisualizer } from 'react-voice-visualizer'
 
-export default function SingleBabysitterAudioPlayer() {
+export default function SingleBabysitterAudioPlayer({ audioUrl }: { audioUrl: string }) {
   const recorderControls = useVoiceVisualizer()
   const {
     setPreloadedAudioBlob,
@@ -52,7 +52,7 @@ export default function SingleBabysitterAudioPlayer() {
 
   useEffect(() => {
     const loadAudioBlob = async () => {
-      const response = await fetch('/voice/me.weba')
+      const response = await fetch(audioUrl)
       const audioBlob = await response.blob()
       setPreloadedAudioBlob(audioBlob)
     }
@@ -62,7 +62,7 @@ export default function SingleBabysitterAudioPlayer() {
   }, [])
 
   return (
-    <div className="flex items-center p-4">
+    <>
       {isPreloadedBlob ? (
         <>
           <AudioVisualizer
@@ -90,6 +90,6 @@ export default function SingleBabysitterAudioPlayer() {
       ) : (
         <LoadingSection />
       )}
-    </div>
+    </>
   )
 }

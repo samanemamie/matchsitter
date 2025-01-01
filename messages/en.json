@@ -105,6 +105,20 @@
     "bookings": "Bookings:",
     "distance_unit": "KM",
     "book": "Book Now",
-    "more": "More Details"
+    "more": "More Details",
+    "workExperiences": "Work Experiences",
+    "responsibilities": "Responsibilities:",
+    "show_more_reviews": "Show More Reviews",
+    "show_more_experiences": "Show More Experiences",
+    "show_less": "Show Less Experiences",
+    "certifications": "Certifications",
+    "reviews": "Reviews",
+
+    "media": "Media",
+    "about": "About"
+  },
+  "Accordion": {
+    "read_more": "Read More",
+    "read_less": "Read Less"
   }
 }
