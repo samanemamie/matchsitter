@@ -48,7 +48,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        '-mt-1 flex items-center justify-center gap-2 pb-3 text-size-button-md-mb text-primary transition-all sm:text-size-button-md-ds [&[data-state=closed]>.close-button]:hidden [&[data-state=open]>.open-button]:hidden [&[data-state=open]>.trigger-icon]:rotate-180 [&[data-state=open]]:pt-4',
+        '-mt-1 flex items-center justify-center gap-2 pb-3 text-size-button-md-mb text-primary transition-all duration-300 ease-in-out sm:text-size-button-md-ds [&[data-state=closed]>.close-button]:hidden [&[data-state=open]>.open-button]:hidden [&[data-state=open]>.trigger-icon]:rotate-180 [&[data-state=open]]:pt-4',
         className
       )}
       {...props}
@@ -68,7 +68,7 @@ const AccordionHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Header
     ref={ref}
-    className={cn('flex w-full items-center justify-between', className)}
+    className={cn('flex w-full items-center justify-between pb-2', className)}
     {...props}
   />
 ))
@@ -76,13 +76,13 @@ AccordionHeader.displayName = 'AccordionHeader'
 
 export interface AccordionContentProps
   extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> {
-  lines?: 1 | 2
+  lines?: 3 | 6
 }
 
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   AccordionContentProps
->(({ className, children, lines = 2, ...props }, ref) => (
+>(({ className, children, lines = 6, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
     forceMount
@@ -93,8 +93,8 @@ const AccordionContent = React.forwardRef<
       '[&[data-state=closed]]:before:bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,#FFFFFF_39.5%)]',
       className,
       {
-        ['data-[state=closed]:line-clamp-1']: lines === 1,
-        ['data-[state=closed]:line-clamp-6']: lines === 2,
+        ['data-[state=closed]:line-clamp-4']: lines === 3,
+        ['data-[state=closed]:line-clamp-6']: lines === 6,
       }
     )}
     {...props}

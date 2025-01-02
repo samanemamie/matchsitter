@@ -17,7 +17,7 @@ export default function LocationBabySitterComponent({
 }: {
   babySittersData: BabySitterInterface[]
 }) {
-  const [id, setId] = useState<number | null>(null)
+  const [id, setId] = useState<string | null>(null)
   const { locale } = useLocaleWithProps()
   const [loading, setLoading] = useState(true)
 

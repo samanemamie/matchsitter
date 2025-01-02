@@ -9,7 +9,7 @@ import type { BabySitterInterface } from '@/lib/typescript/interfaces/babySitter
 interface MarkersProps {
   data?: BabySitterInterface[] | BabySitterInterface
   locale: I18nLocale
-  selectedId: number | null
+  selectedId: string | null
   mapRef: React.MutableRefObject<Map | null>
 }
 

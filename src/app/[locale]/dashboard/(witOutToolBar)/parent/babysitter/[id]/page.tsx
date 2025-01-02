@@ -22,7 +22,8 @@ interface Props {
 
 export default async function SingleBabysitterPage({ params }: Props) {
   const { id } = await params
-  const data = BABY_SITTER.find((item) => item.id == id)
+  const data = BABY_SITTER.find((item) => item.id === id.toString())
+
   const { locale } = await getLocaleWithProps()
   const t = await getTranslations('SingleBabysitter')
   if (!data) return

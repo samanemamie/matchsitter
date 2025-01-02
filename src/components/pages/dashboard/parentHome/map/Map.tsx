@@ -14,7 +14,7 @@ interface MapProps {
   posix: LatLngExpression | LatLngTuple
   zoom?: number
   data?: BabySitterInterface[] | BabySitterInterface
-  id: number | null
+  id: string | null
   setLoading: (loading: boolean) => void
 }
 

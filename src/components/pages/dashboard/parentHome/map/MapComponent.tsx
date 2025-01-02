@@ -10,7 +10,7 @@ const MapComponent = memo(function MapComponent({
   data,
   setLoading,
 }: {
-  id: number | null
+  id: string | null
   data: BabySitterInterface[] | BabySitterInterface
   setLoading: (loading: boolean) => void
 }) {

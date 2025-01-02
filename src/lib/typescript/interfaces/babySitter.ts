@@ -3,7 +3,7 @@ import type { I18nLocale } from '@/i18n/i18n-configs'
 import type { StaticImageData } from 'next/image'
 
 export interface BabySitterInterface {
-  id: number
+  id: string
   name: Record<I18nLocale, string>
   about: Record<I18nLocale, string>
   bookings: number
@@ -28,7 +28,7 @@ export interface BabySitterInterface {
 }
 
 export interface WorkExperiencesInterface {
-  id: number
+  id: string
   title: Record<I18nLocale, string>
   name: Record<I18nLocale, string>
   location: Record<I18nLocale, string>
@@ -37,16 +37,16 @@ export interface WorkExperiencesInterface {
 }
 
 export interface ResponsibilitiesInterface {
-  id: number
+  id: string
   title: Record<I18nLocale, string>
 }
 
 export interface CertificationsInterface {
-  id: number
+  id: string
   img: StaticImageData
 }
 export interface ReviewsInterface {
-  id: number
+  id: string
   name: Record<I18nLocale, string>
   score: number
   date: Record<I18nLocale, string>
