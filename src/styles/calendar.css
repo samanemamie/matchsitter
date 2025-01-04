@@ -1,0 +1,63 @@
+.fc-header-toolbar {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .fc-header-toolbar {
+    flex-direction: row;
+  }
+}
+
+.fc-daygrid-block-event .fc-event-time,
+.fc-daygrid-block-event .fc-event-title {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 8px;
+}
+.fc-event-main {
+  background-color: #f5eeed;
+  border-radius: 5px;
+}
+
+.fc-h-event {
+  border: none !important;
+}
+.fc-daygrid-day-events {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.fc {
+  height: 100%;
+}
+.fc-day {
+  width: 120px;
+}
+@media (min-width: 768px) {
+  .fc-day {
+    width: auto;
+  }
+}
+.fc-scroller {
+  overflow: scroll !important;
+}
+
+@media (min-width: 768px) {
+  .fc-scroller {
+    overflow: hidden !important;
+  }
+}
+
+.fc .fc-timegrid-axis-cushion {
+  max-width: none;
+}
+.fc-next-button {
+  @apply !rounded-100 !border-none !bg-background-200 !text-icon-800;
+}
+.fc-prev-button {
+  @apply !rounded-100 !border-none !bg-background-200 !text-icon-800;
+}
+.fc-button-group {
+  @apply gap-2;
+}
