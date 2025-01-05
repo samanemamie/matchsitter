@@ -5,7 +5,7 @@ import {
   LucidStarFill,
 } from '@/components/icons'
 import { LucidHeartFill } from '@/components/icons/fiil/LucidHeartFill'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import Paragraph from '@/components/ui/Paragraph'
 import { BabySitterStatusEnum, BabySitterStatusLabels } from '@/data/enums/dashboard'
 import type { I18nLocale } from '@/i18n/i18n-configs'
@@ -162,12 +162,13 @@ const BabySitterCardFooter = React.forwardRef<HTMLDivElement, BabySitterCardFoot
     const t = useTranslations('BabySitterCard')
     return (
       <div ref={ref} className={cn('flex flex-col gap-2', className)} {...props}>
-        <Button size="sm">
-          <Link href={bookLink}>{t('book')}</Link>
-        </Button>
-        <Button variant="link" size="link-sm">
-          <Link href={moreLink}>{t('more')}</Link>
-        </Button>
+        <Link className={cn(buttonVariants({ variant: 'default', size: 'sm' }))} href={bookLink}>
+          {t('book')}
+        </Link>
+
+        <Link className={cn(buttonVariants({ variant: 'link', size: 'link-sm' }))} href={moreLink}>
+          {t('more')}
+        </Link>
       </div>
     )
   }

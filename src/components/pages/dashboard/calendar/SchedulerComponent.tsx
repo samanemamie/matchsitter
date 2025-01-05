@@ -56,9 +56,9 @@ export default function SchedulerComponent() {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <div className="w-[200px]">
+      <div className="w-[120px]">
         <Select value={months[currentMonth]} onValueChange={handleMonthChange}>
-          <SelectTrigger className="bg-background">
+          <SelectTrigger className="bg-background-200">
             <SelectValue placeholder="Select month" />
           </SelectTrigger>
           <SelectContent>

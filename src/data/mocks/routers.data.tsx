@@ -60,9 +60,15 @@ export const PARENT_ROUTES: LinkInterface[] = [
         icon: LucideHome,
       },
       {
-        id: 1,
+        id: 2,
         name: { en: 'Calendar', fa: '' },
         link: '/dashboard/parent/babysitter/calendar',
+        icon: LucideHome,
+      },
+      {
+        id: 3,
+        name: { en: 'Booking', fa: '' },
+        link: '/dashboard/parent/babysitter/booking',
         icon: LucideHome,
       },
     ],

@@ -5,14 +5,13 @@ import SingleBabysitterAudioPlayer from '@/components/pages/dashboard/parentHome
 import SingleBabysitterHero from '@/components/pages/dashboard/parentHome/SingleBabysitterHero'
 import SingleBabySitterReviews from '@/components/pages/dashboard/parentHome/SingleBabySitterReviews'
 import SingleBabySitterWorkExperiences from '@/components/pages/dashboard/parentHome/SingleBabySitterWorkExperiences'
-
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import LargeHeading from '@/components/ui/LargeHeading'
 
 import { BABY_SITTER } from '@/data/mocks/babySitters'
@@ -28,14 +27,13 @@ interface Props {
 export default async function SingleBabysitterPage({ params }: Props) {
   const { id } = await params
   const data = BABY_SITTER.find((item) => item.id === id.toString())
-
   const { locale } = await getLocaleWithProps()
   const t = await getTranslations('SingleBabysitter')
   if (!data) return
 
   return (
     <>
-      <div className="flex flex-col gap-6 px-4">
+      <div className="flex flex-col gap-6">
         <SingleBabysitterHero t={t} locale={locale} data={data} />
         <SingleBabysitterAudioPlayer audioUrl={data.audioUrl} />
 
@@ -70,9 +68,12 @@ export default async function SingleBabysitterPage({ params }: Props) {
 
       <BabySitterToolbar className="h-[95px]">
         <div className="flex flex-col gap-2">
-          <Button size="md" className="h-10 w-full">
+          <Link
+            className={cn(buttonVariants({ variant: 'default', size: 'md' }), 'h-10')}
+            href={`/dashboard/parent/babysitter/booking/${data.id}`}
+          >
             {t('book_now')}
-          </Button>
+          </Link>
 
           <Link
             className={cn(buttonVariants({ variant: 'link', size: 'link-md' }), 'h-10')}

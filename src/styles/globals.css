@@ -161,3 +161,8 @@
 .container-overflow::-webkit-scrollbar {
   @apply hidden h-0 w-0;
 }
+
+.iconify-thin > g,
+.iconify-thin > path {
+  @apply stroke-[1px];
+}

@@ -14,7 +14,7 @@ export default async function layoutwitToolbar({ children }: PropsWithChildren) 
       <Paragraph variant="heading" size="size-title-lg">
         {dynamicRouteName}
       </Paragraph>
-      <main className="w-full">{children}</main>
+      <main className="w-full px-4">{children}</main>
       <Toolbar />
     </main>
   )

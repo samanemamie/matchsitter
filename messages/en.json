@@ -106,6 +106,7 @@
     "distance_unit": "KM",
     "book": "Book Now",
     "more": "More Details",
+
     "workExperiences": "Work Experiences",
     "responsibilities": "Responsibilities:",
     "show_more_reviews": "Show More Reviews",
@@ -115,9 +116,20 @@
     "reviews": "Reviews",
     "book_now": "Book Now",
     "view_calendar": "View Calendar",
-
     "media": "Media",
-    "about": "About"
+    "about": "About",
+
+    "Booking": {
+      "date": "Date",
+      "how_many_hours": "How many hours do you need?",
+      "hours": "Hours",
+      "checkout": "Checkout",
+      "rate_per_hour": "Rate per Hour",
+      "your_hours": "Your Hours",
+      "total": "Total",
+      "price_symbol": "$",
+      "toast": "please select a date and time first"
+    }
   },
   "Accordion": {
     "read_more": "Read More",

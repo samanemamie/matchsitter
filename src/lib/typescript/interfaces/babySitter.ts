@@ -21,6 +21,7 @@ export interface BabySitterInterface {
     lat: number
     lng: number
   }
+  onCallDate?: OnCallDateInterface[]
   workExperiences: WorkExperiencesInterface[]
   certifications?: CertificationsInterface[]
   madias?: CertificationsInterface[]
@@ -51,4 +52,10 @@ export interface ReviewsInterface {
   score: number
   date: Record<I18nLocale, string>
   desk: Record<I18nLocale, string>
+}
+export interface OnCallDateInterface {
+  id: string
+  day: Record<I18nLocale, string>
+  date: Record<I18nLocale, string>
+  time: Record<I18nLocale, string>[]
 }

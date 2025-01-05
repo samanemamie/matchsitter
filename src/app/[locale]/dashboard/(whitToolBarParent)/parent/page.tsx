@@ -7,9 +7,5 @@ interface Props {
 export default async function ParentHomePage({ searchParams }: Props) {
   const currSearchParams = await searchParams
 
-  return (
-    <div className="px-4">
-      <ParentHomePageComponent searchParams={currSearchParams.babysitters_state!} />
-    </div>
-  )
+  return <ParentHomePageComponent searchParams={currSearchParams.babysitters_state!} />
 }

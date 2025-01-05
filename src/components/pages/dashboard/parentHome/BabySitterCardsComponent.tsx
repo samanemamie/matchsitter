@@ -54,7 +54,7 @@ export default function BabySitterCardsComponent({
               distance={item.distance}
             />
             <BabySitterCardFooter
-              bookLink="/dashboard"
+              bookLink={`/dashboard/parent/babysitter/booking/${item.id}`}
               moreLink={`/dashboard/${role}/babysitter/${item.id}`}
             />
           </BabySitterCard>

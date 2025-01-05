@@ -15,7 +15,7 @@ export default async function layoutwitOutToolbar({ children }: PropsWithChildre
       <Paragraph variant="heading" size="size-title-lg">
         {dynamicRouteName}
       </Paragraph>
-      <main className="w-full">{children}</main>
+      <main className="w-full px-4">{children}</main>
     </main>
   )
 }
