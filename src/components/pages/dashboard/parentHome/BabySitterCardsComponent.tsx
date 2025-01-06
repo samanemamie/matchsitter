@@ -9,6 +9,7 @@ import { BabySitterStatusEnum, BabySitterStatusLabels } from '@/data/enums/dashb
 import { BABY_SITTER } from '@/data/mocks/babySitters'
 import { useLocaleWithProps } from '@/i18n/i18n-configs'
 import { useUserStore } from '@/lib/context/AuthProvider'
+import { useBookingStore } from '@/lib/store/useBookingStore'
 import type { BabySitterInterface } from '@/lib/typescript/interfaces/babySitter'
 
 export default function BabySitterCardsComponent({
@@ -22,6 +23,8 @@ export default function BabySitterCardsComponent({
 
   const defaultState = BabySitterStatusLabels[BabySitterStatusEnum.GENERAL][locale]
   const sosState = BabySitterStatusLabels[BabySitterStatusEnum.SOS][locale]
+
+  const { completedBookings } = useBookingStore()
 
   const filteredBabySitters = BABY_SITTER.filter((item) => {
     const itemStatusLabel = BabySitterStatusLabels[item.status][locale]
@@ -40,6 +43,7 @@ export default function BabySitterCardsComponent({
         return filteredBabySitters.map((item: BabySitterInterface) => (
           <BabySitterCard key={item.id}>
             <BabySitterCardHeader
+              isBooked={completedBookings.some((booking) => booking.babySitter.id === item.id)}
               name={item.name[locale]}
               status={item.status}
               img={item.img}

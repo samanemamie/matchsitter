@@ -129,6 +129,22 @@
       "total": "Total",
       "price_symbol": "$",
       "toast": "please select a date and time first"
+    },
+
+    "Checkout": {
+      "babysitter": "Babysitter",
+      "age": "Age",
+      "date": "Date of visit",
+
+      "your_name": "Date of visit",
+      "location": "Location",
+
+      "place_booking": "Place Booking",
+      "rate_per_hour": "Rate per Hour",
+      "your_hours": "Your Hours",
+      "total": "Total",
+      "price_symbol": "$",
+      "toast": "please select a date and time first"
     }
   },
   "Accordion": {

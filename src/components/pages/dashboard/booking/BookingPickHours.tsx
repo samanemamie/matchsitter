@@ -3,23 +3,25 @@
 import { LucideMinus, LucidePlus } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import Paragraph from '@/components/ui/Paragraph'
+import { useClientBooking } from '@/lib/hooks/useClientBooking'
 import { useBookingStore } from '@/lib/store/useBookingStore'
 import { useTranslations } from 'next-intl'
 import { toast } from 'sonner'
 
-export default function BookingPickHours() {
+export default function BookingPickHours({ id }: { id: string }) {
   const t = useTranslations('SingleBabysitter.Booking')
-  const { hour, selectedDate, selectedTime, setHour } = useBookingStore()
+  const { setHour } = useBookingStore()
+  const { booking } = useClientBooking(id)
 
   const handleHourChange = (change: number) => {
-    if (!selectedDate || !selectedTime) {
+    if (!booking?.dateId || !booking?.time) {
       toast.error(t('toast'))
       return
     }
 
-    const newHour = hour + change
-    if (newHour >= 0 && newHour <= 24) {
-      setHour(newHour)
+    const newHour = (booking?.hour ?? 1) + change
+    if (newHour >= 1 && newHour <= 24) {
+      setHour(id, newHour)
     }
   }
 
@@ -38,7 +40,7 @@ export default function BookingPickHours() {
           <LucideMinus className="iconify-thin w-4" />
         </Button>
         <Paragraph size="size-body-sm" variant="body-400">
-          {hour} {t('hours')}
+          {booking?.hour ?? 1} {t('hours')}
         </Paragraph>
         <Button
           variant="none"

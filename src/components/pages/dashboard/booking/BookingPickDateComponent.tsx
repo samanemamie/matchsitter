@@ -33,8 +33,7 @@ export default function BookingPickDateComponent({ data, locale, id }: Props) {
               variant="none"
               size="none"
               onClick={() => {
-                setSelectedDate(item.id)
-                setSelectedTime(null)
+                setSelectedDate(id, item.id, item.date[locale])
               }}
               className={cn(
                 'flex flex-col items-center gap-1 rounded-100 border border-border-200 px-3 py-1 text-body-300',
@@ -58,7 +57,7 @@ export default function BookingPickDateComponent({ data, locale, id }: Props) {
                 ?.time.map((timeSlot, index) => (
                   <Button
                     key={index}
-                    onClick={() => setSelectedTime(timeSlot[locale])}
+                    onClick={() => setSelectedTime(id, timeSlot[locale])}
                     variant="none"
                     size="none"
                     className={cn(
