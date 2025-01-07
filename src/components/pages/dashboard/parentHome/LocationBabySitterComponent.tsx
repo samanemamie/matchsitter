@@ -8,18 +8,23 @@ import {
 } from '@/components/common/cards/BabySitterCard'
 import MapComponent from '@/components/pages/dashboard/parentHome/map/MapComponent'
 import { useLocaleWithProps } from '@/i18n/i18n-configs'
+import { useBookingStore } from '@/lib/store/useBookingStore'
 import type { BabySitterInterface } from '@/lib/typescript/interfaces/babySitter'
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
 
 export default function LocationBabySitterComponent({
   babySittersData,
+  role,
 }: {
   babySittersData: BabySitterInterface[]
+  role: string
 }) {
   const [id, setId] = useState<string | null>(null)
   const { locale } = useLocaleWithProps()
   const [loading, setLoading] = useState(true)
+
+  const { completedBookings } = useBookingStore()
 
   return (
     <div className="relative mb-24 h-[60dvh] w-full">
@@ -35,10 +40,12 @@ export default function LocationBabySitterComponent({
               key={item.id}
             >
               <BabySitterCardHeader
+                isBooked={completedBookings.some((booking) => booking.babySitter.id === item.id)}
                 name={item.name[locale]}
                 status={item.status}
                 img={item.img}
                 locale={locale}
+                id={item.id}
               />
               <BabySitterCardContent
                 star={item.star}
@@ -48,7 +55,10 @@ export default function LocationBabySitterComponent({
                 experience={item.experience}
                 distance={item.distance}
               />
-              <BabySitterCardFooter bookLink="/dashboard" moreLink="/dashboard" />
+              <BabySitterCardFooter
+                bookLink={`/dashboard/parent/babysitter/booking/${item.id}`}
+                moreLink={`/dashboard/${role}/babysitter/${item.id}`}
+              />
             </BabySitterCard>
           ))}
         </div>

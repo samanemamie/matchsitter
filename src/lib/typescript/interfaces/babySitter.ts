@@ -17,6 +17,8 @@ export interface BabySitterInterface {
   audioUrl: string
   experience: number
   distance: number
+  completed?: boolean
+  satisfied?: boolean
   location?: {
     lat: number
     lng: number

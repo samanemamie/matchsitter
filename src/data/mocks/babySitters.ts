@@ -550,6 +550,7 @@ export const BABY_SITTER: BabySitterInterface[] = [
         ],
       },
     ],
+    completed: true,
 
     age: 29,
     experience: 2,
@@ -937,6 +938,8 @@ export const BABY_SITTER: BabySitterInterface[] = [
         ],
       },
     ],
+    completed: true,
+
     age: 25,
     experience: 3,
     distance: 1.8,

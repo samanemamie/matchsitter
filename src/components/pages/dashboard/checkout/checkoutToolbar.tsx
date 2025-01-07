@@ -1,13 +1,13 @@
 'use client'
 import BabySitterToolbar from '@/components/pages/dashboard/parentHome/BabySitterToolbar'
-import { buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import Paragraph from '@/components/ui/Paragraph'
 import { useClientBooking } from '@/lib/hooks/useClientBooking'
 import { useBookingStore } from '@/lib/store/useBookingStore'
 import type { BabySitterInterface } from '@/lib/typescript/interfaces/babySitter'
-import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
+import { toast } from 'sonner'
 
 interface Props {
   data: BabySitterInterface
@@ -15,14 +15,15 @@ interface Props {
 
 export default function CheckoutToolbar({ data }: Props) {
   const t = useTranslations('SingleBabysitter.Checkout')
-  const { booking, isClient, completedBookings } = useClientBooking(data.id)
+  const { booking, isClient } = useClientBooking(data.id)
 
   const completeBooking = useBookingStore((state) => state.completeBooking)
   const router = useRouter()
 
   const handlePlaceBooking = () => {
     completeBooking(data)
-    // router.push('/dashboard/parent/my-bookings')
+    toast.success(t('toast_success'))
+    router.push('/dashboard/parent/my-bookings')
   }
 
   return (
@@ -54,12 +55,9 @@ export default function CheckoutToolbar({ data }: Props) {
             {t('price_symbol')} {isClient ? (booking?.total ?? 1) : 1}
           </Paragraph>
         </div>
-        <button
-          className={cn(buttonVariants({ variant: 'default', size: 'md' }), 'h-10')}
-          onClick={handlePlaceBooking}
-        >
+        <Button size="md" className="h-10" onClick={handlePlaceBooking}>
           {t('place_booking')}
-        </button>
+        </Button>
       </div>
     </BabySitterToolbar>
   )

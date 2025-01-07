@@ -10,6 +10,7 @@ import Paragraph from '@/components/ui/Paragraph'
 import { BabySitterStatusEnum, BabySitterStatusLabels } from '@/data/enums/dashboard'
 import type { I18nLocale } from '@/i18n/i18n-configs'
 import { useAnimationOnChange } from '@/lib/hooks/useAnimationOnChange'
+import { useClientBooking } from '@/lib/hooks/useClientBooking'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 
@@ -23,6 +24,7 @@ interface BabySitterCardHeaderProps extends React.HTMLAttributes<HTMLDivElement>
   img: StaticImageData
   locale: I18nLocale
   isBooked?: boolean
+  id: string
 }
 
 interface BabySitterCardContentProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -54,11 +56,17 @@ const BabySitterCard = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTM
 BabySitterCard.displayName = 'BabySitterCard'
 
 const BabySitterCardHeader = React.forwardRef<HTMLDivElement, BabySitterCardHeaderProps>(
-  ({ isBooked, locale, img, name, status, className, ...props }, ref) => {
-    const [isFavorite, setIsFavorite] = React.useState(false)
+  ({ id, isBooked, locale, img, name, status, className, ...props }, ref) => {
+    const t = useTranslations('BabySitterCard')
+    const { isFavorite, addFavorite, removeFavorite, isClient } = useClientBooking(id)
     const [isAnimating, triggerAnimation] = useAnimationOnChange({ duration: 500 })
+
     const handleFavoriteClick = () => {
-      setIsFavorite(!isFavorite)
+      if (isFavorite(id)) {
+        removeFavorite(id)
+      } else {
+        addFavorite(id)
+      }
       triggerAnimation()
     }
     return (
@@ -72,32 +80,24 @@ const BabySitterCardHeader = React.forwardRef<HTMLDivElement, BabySitterCardHead
             <div className="flex items-center gap-2">
               {isBooked && (
                 <Paragraph variant="body-300" size="size-title-md">
-                  Booked
+                  {t('booked')}
                 </Paragraph>
               )}
-              <Button
-                variant="none"
-                size="none"
-                onClick={handleFavoriteClick}
-                className={cn(isAnimating && 'animate-ping')}
-                aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
-              >
-                {isFavorite ? (
-                  <LucidHeartFill
-                    onClick={() => {
-                      setIsFavorite(!isFavorite)
-                    }}
-                    className="iconify-normal size-5 text-secondary"
-                  />
-                ) : (
-                  <LucideHeart
-                    onClick={() => {
-                      setIsFavorite(!isFavorite)
-                    }}
-                    className="iconify-normal size-5 text-secondary"
-                  />
-                )}
-              </Button>
+              {isClient ? (
+                <Button
+                  variant="none"
+                  size="none"
+                  onClick={handleFavoriteClick}
+                  className={cn(isAnimating && 'animate-ping')}
+                  aria-label={isFavorite(id) ? 'Remove from favorites' : 'Add to favorites'}
+                >
+                  {isClient && isFavorite(id) ? (
+                    <LucidHeartFill className="iconify-normal size-5 text-secondary" />
+                  ) : (
+                    <LucideHeart className="iconify-normal size-5 text-secondary" />
+                  )}
+                </Button>
+              ) : null}
             </div>
           </div>
           <Paragraph variant="body-200" size="size-body-sm" className="flex items-center gap-1">

@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react'
 
 export function useClientBooking(babySitterId: string) {
   const [isClient, setIsClient] = useState(false)
-  const { getBooking, completedBookings } = useBookingStore()
+  const { getBooking, completedBookings, isFavorite, addFavorite, removeFavorite, favorites } =
+    useBookingStore()
 
   useEffect(() => {
     setIsClient(true)
@@ -14,6 +15,10 @@ export function useClientBooking(babySitterId: string) {
   const booking = isClient ? getBooking(babySitterId) : null
 
   return {
+    isFavorite,
+    addFavorite,
+    removeFavorite,
+    favorites,
     booking,
     isClient,
     completedBookings,

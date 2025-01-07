@@ -76,6 +76,9 @@
       "company_name_len": "Company name must be at least 3 characters long.",
       "main_goal_len": "Main goal must be at least 16 characters long.",
       "invalid_role": "Please select your role."
+    },
+    "Review": {
+      "review": "Review must be at least 16 characters long."
     }
   },
   "QRCode": {
@@ -89,6 +92,7 @@
     "price": "$",
     "hour": "hour",
     "age": "Age:",
+    "booked": "Booked",
     "experience": "Experience:",
     "distance": "Distance:",
     "distance_unit": "KM",
@@ -144,8 +148,31 @@
       "your_hours": "Your Hours",
       "total": "Total",
       "price_symbol": "$",
-      "toast": "please select a date and time first"
+      "toast": "please select a date and time first",
+      "toast_success": "Your booking added successful"
     }
+  },
+
+  "MyBookings": {
+    "no": "No",
+    "yes": " Yes, I am",
+    "write_review": " Write a Review",
+    "MyBookingCard": {
+      "date_of_visit": "Date of visit",
+      "cost": "Cost",
+      "distance": "Distance",
+      "status": "Status",
+      "completed": "completed"
+    }
+  },
+
+  "MyBookingReviewDrawer": {
+    "title": "Write a Review",
+    "button": "Write a Review",
+    "submit": "Submit",
+    "score": "Score",
+    "review": "Write your review here",
+    "toast": "Your review have been submitted."
   },
   "Accordion": {
     "read_more": "Read More",

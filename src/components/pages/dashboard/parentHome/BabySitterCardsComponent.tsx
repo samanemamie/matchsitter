@@ -38,7 +38,7 @@ export default function BabySitterCardsComponent({
   const renderBabySitterCard = () => {
     switch (babysittersState) {
       case sosState:
-        return <LocationBabySitterComponent babySittersData={filteredBabySitters} />
+        return <LocationBabySitterComponent role={role} babySittersData={filteredBabySitters} />
       default:
         return filteredBabySitters.map((item: BabySitterInterface) => (
           <BabySitterCard key={item.id}>
@@ -48,6 +48,7 @@ export default function BabySitterCardsComponent({
               status={item.status}
               img={item.img}
               locale={locale}
+              id={item.id}
             />
             <BabySitterCardContent
               star={item.star}

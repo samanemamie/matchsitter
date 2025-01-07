@@ -21,6 +21,11 @@ interface BookingState {
     id: string
   ) => { dateId: string; dateValue: string; time: string; hour: number; total: number } | undefined
   completeBooking: (babySitter: BabySitterInterface) => void
+
+  favorites: string[]
+  addFavorite: (id: string) => void
+  removeFavorite: (id: string) => void
+  isFavorite: (id: string) => boolean
 }
 
 export const useBookingStore = create<BookingState>()(
@@ -30,6 +35,7 @@ export const useBookingStore = create<BookingState>()(
       selectedTime: null,
       bookings: {},
       completedBookings: [],
+      favorites: [],
       setSelectedDate: (id: string, dateId: string, dateValue: string) => {
         set((state) => ({
           selectedDate: dateId,
@@ -108,12 +114,19 @@ export const useBookingStore = create<BookingState>()(
             }
 
             return {
+              selectedDate: null,
+              selectedTime: null,
               completedBookings: updatedCompletedBookings,
               bookings: remainingBookings,
             }
           })
         }
       },
+
+      addFavorite: (id: string) => set((state) => ({ favorites: [...state.favorites, id] })),
+      removeFavorite: (id: string) =>
+        set((state) => ({ favorites: state.favorites.filter((fav) => fav !== id) })),
+      isFavorite: (id: string) => get().favorites.includes(id),
     }),
     {
       name: 'booking-storage',
