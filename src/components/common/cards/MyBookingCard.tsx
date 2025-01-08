@@ -14,6 +14,7 @@ interface MyBookingCardHeaderProps extends React.HTMLAttributes<HTMLDivElement> 
   status: BabySitterStatusEnum
   img: StaticImageData
   locale: I18nLocale
+  dropdownMenu: React.ReactElement
 }
 
 interface MyBookingCardContentProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -39,9 +40,7 @@ const MyBookingCard = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTML
 MyBookingCard.displayName = 'MyBookingCard'
 
 const MyBookingCardHeader = React.forwardRef<HTMLDivElement, MyBookingCardHeaderProps>(
-  ({ locale, img, name, status, className, ...props }, ref) => {
-    const t = useTranslations('BabySitterCard')
-
+  ({ dropdownMenu, locale, img, name, status, className, ...props }, ref) => {
     return (
       <div ref={ref} className={cn('flex items-center gap-2', className)} {...props}>
         <Image className={cn('size-14 rounded-100')} alt="babySitter" src={img} />
@@ -50,7 +49,7 @@ const MyBookingCardHeader = React.forwardRef<HTMLDivElement, MyBookingCardHeader
             <Paragraph variant="body-300" size="size-title-md">
               {name}
             </Paragraph>
-            <div className="flex items-center gap-2">for drower</div>
+            {dropdownMenu}
           </div>
           <Paragraph variant="body-200" size="size-body-sm" className="flex items-center gap-1">
             {status === BabySitterStatusEnum.CERTIFIED && (

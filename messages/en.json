@@ -157,12 +157,21 @@
     "no": "No",
     "yes": " Yes, I am",
     "write_review": " Write a Review",
+    "noData": "No completed bookings yet.",
+    "satisfied": "You are satisfied with",
+    "not_satisfied": "You are not satisfied with",
+    "are_you": "Are you satisfied with",
+    "toast_delete": "Your booking deleted successful",
     "MyBookingCard": {
       "date_of_visit": "Date of visit",
       "cost": "Cost",
       "distance": "Distance",
       "status": "Status",
       "completed": "completed"
+    },
+    "dropdownMenu": {
+      "cancel": "Cancel",
+      "delete": "Delete"
     }
   },
 
