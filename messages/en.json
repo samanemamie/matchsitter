@@ -190,5 +190,34 @@
   "Settings": {
     "notifications": "Notifications",
     "desk": "Allow Machsitter send you notifications."
+  },
+
+  "Profile": {
+    "name": "Full Name",
+    "toast": "Your profile Changed Successfully",
+    "toast_error": "something went wrong",
+    "placeholderName": "JohnXoX",
+    "email": "Email",
+    "placeholderEmail": "example@mail.com",
+    "nick_name": "Nick name",
+    "nick_name_placeholderName": "JohnXoX",
+
+    "edit_profile": "Edit Information",
+    "change_password": "Change Password",
+    "password": "PASSWORD",
+    "current_password": "Current Password",
+    "new_password": "New Password",
+    "confirm_new_password": "Confirm New Password",
+    "placeholder_password": "Enter at least 8 Character",
+    "save_changes": "SAVE CHANGES"
+  },
+  "ProfileImages": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "delete": "DELETE iMAGE"
+  },
+  "SecondFileInput": {
+    "upload": "UPLOADE AN IMAGE",
+    "change_logo": "Change Logo"
   }
 }
