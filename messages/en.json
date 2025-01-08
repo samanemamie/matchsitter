@@ -12,9 +12,9 @@
     "targets": "Targets",
     "subscription": "Subscription"
   },
-  "LogOutAlert": {
-    "title": "Are you sure you want to log out?",
-    "message": "Signing out will end your current session. Are you sure you want to continue?",
+  "LogOut": {
+    "logout": "Log out",
+    "title": "Do you want to log out?",
     "cancel": "Cancel",
     "confirm": "Log Out",
     "redirect": "Redirecting..."
@@ -186,5 +186,9 @@
   "Accordion": {
     "read_more": "Read More",
     "read_less": "Read Less"
+  },
+  "Settings": {
+    "notifications": "Notifications",
+    "desk": "Allow Machsitter send you notifications."
   }
 }

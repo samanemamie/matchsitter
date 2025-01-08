@@ -556,7 +556,6 @@ export const BABY_SITTER: BabySitterInterface[] = [
     experience: 2,
     distance: 2.1,
   },
-
   {
     id: 'c38e7179-a980-49bb-8778-e7a42c1aaf5d22',
     img: babySitter6,
