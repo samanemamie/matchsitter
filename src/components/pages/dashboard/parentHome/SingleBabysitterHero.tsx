@@ -29,7 +29,7 @@ export default function SingleBabysitterHero({
           <Paragraph variant="body-300" size="size-title-md">
             {data.name[locale]}
           </Paragraph>
-          <FavoriteComponent />
+          <FavoriteComponent id={data.id} />
         </div>
         <Paragraph variant="body-200" size="size-body-lg" className="flex items-center gap-1">
           {data.status === BabySitterStatusEnum.CERTIFIED && (
