@@ -1,8 +1,10 @@
 'use client'
 
-import { cva, type VariantProps } from 'class-variance-authority'
-import clsx from 'clsx'
+import { LucidePen } from '@/components/icons'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
+
 import type { StaticImageData } from 'next/image'
 import * as React from 'react'
 
@@ -13,23 +15,7 @@ export interface SecondFileInputProps {
   setIsfileUpload: (val: boolean) => void
 }
 
-const uploadDivVariants = cva('', {
-  variants: {
-    variant: {
-      default:
-        'text-size_button_sm sm:text-size_button_lg flex items-center justify-center rounded-150 border-2 border-primary bg-transparent px-4 py-3.5 text-primary duration-300 hover:bg-primary-50 focus:bg-primary-100 focus:text-primary disabled:border-gray-600 disabled:text-gray-600',
-      mygame:
-        'bg-custom-profile-image-gradient text-size_input flex items-center justify-center rounded-150 px-3 py-2 text-gray-50',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-})
-
-export interface UploadDivProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof uploadDivVariants> {
+export interface UploadDivProps extends React.HTMLAttributes<HTMLDivElement> {
   file?: File | null | StaticImageData
   setFile: (file: File) => void
   className?: string
@@ -37,9 +23,8 @@ export interface UploadDivProps
 }
 
 const SecondFileInput = React.forwardRef<HTMLDivElement, UploadDivProps>(
-  ({ className, variant, file, setFile, setIsfileUpload, ...props }, ref) => {
+  ({ className, file, setFile, setIsfileUpload, ...props }, ref) => {
     const t = useTranslations('SecondFileInput')
-
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       event.preventDefault()
       const fileList = event.target.files
@@ -48,36 +33,29 @@ const SecondFileInput = React.forwardRef<HTMLDivElement, UploadDivProps>(
         setFile(fileList[0])
       }
     }
-
+    //TODO:shadow does not work
     return (
-      <label className={`${className}`}>
+      <div className="relative">
         {file ? (
-          <div
-            className={clsx('shadow-tagButtonShadow rounded-3600 bg-gray-800 p-2.5', {
-              'absolute bottom-[70px] start-24': variant === 'mygame',
-            })}
+          <Button
+            variant="none"
+            size="none"
+            className={cn(
+              'absolute bottom-[18px] start-4 flex size-8 flex-col items-center justify-center rounded-3600 bg-gray-50 shadow-lg'
+            )}
           >
-            {/* <HugeiconsEdit02 className="text-lg text-gray-100 sm:text-xl" /> */}
-            <p>edit</p>
-          </div>
+            <LucidePen className="size-5 text-info" />
+          </Button>
         ) : (
-          <div
-            className={clsx({
-              'relative isolate z-10 w-full text-gray-50 after:absolute after:-inset-[0.7px] after:-z-[1] after:rounded-3600 after:bg-gradient-to-t after:from-[#5C6066] after:via-transparent after:to-transparent focus:after:bg-gradient-to-t focus:after:from-[#C5CAD4]':
-                variant === 'mygame',
-            })}
-          >
-            <div className={clsx(uploadDivVariants({ variant }))}>{t('change_logo')}</div>
-          </div>
+          <Button size="sm">{t('change_logo')}</Button>
         )}
-
         <input
           onChange={handleFileChange}
-          className="absolute inset-0 hidden"
+          className="absolute inset-0 cursor-pointer opacity-0"
           type="file"
           accept="image/*"
         />
-      </label>
+      </div>
     )
   }
 )

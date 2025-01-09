@@ -50,24 +50,20 @@ export default function ProfileChangePassword() {
   const formRef = useRef<HTMLFormElement>(null)
 
   return (
-    <div className="space-y-6 pt-2">
-      <LargeHeading
-        as="h3"
-        className="clipped-text text-size_heading_1_mb md:text-size_heading_1_ds text-center !text-2xl"
-        style={{ '--from': '#F5F7FB', '--to': '#919395' } as React.CSSProperties}
-      >
+    <div className="space-y-6">
+      <LargeHeading as="h4" variant="body-400">
         {t('password')}
       </LargeHeading>
 
       <Form {...form}>
-        <form className="w-full space-y-6" onSubmit={form.handleSubmit(onSubmit)} ref={formRef}>
-          <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+        <form className="flex flex-col gap-6" onSubmit={form.handleSubmit(onSubmit)} ref={formRef}>
+          <div className="contents">
             <FormField
               control={form.control}
               name="current_password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{t('current_password')}</FormLabel>
+                  <FormLabel disabled={isDisable}>{t('current_password')}</FormLabel>
                   <FormControl>
                     <Input
                       type="password"
@@ -85,7 +81,7 @@ export default function ProfileChangePassword() {
               name="new_password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{t('new_password')}</FormLabel>
+                  <FormLabel disabled={isDisable}>{t('new_password')}</FormLabel>
                   <FormControl>
                     <Input
                       type="password"
@@ -103,7 +99,7 @@ export default function ProfileChangePassword() {
               name="confirm_new_password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{t('confirm_new_password')}</FormLabel>
+                  <FormLabel disabled={isDisable}>{t('confirm_new_password')}</FormLabel>
                   <FormControl>
                     <Input
                       type="password"
@@ -119,20 +115,11 @@ export default function ProfileChangePassword() {
           </div>
 
           {isDisable ? (
-            <Button
-              onClick={() => setIsDisable(false)}
-              type="button"
-              className="w-full px-4 py-3.5 sm:w-auto"
-            >
+            <Button onClick={() => setIsDisable(false)} type="button" size="sm">
               {t('edit_profile')}
             </Button>
           ) : (
-            <Button
-              type="submit"
-              loading={loading}
-              onClick={form.handleSubmit(onSubmit)}
-              className="w-full px-4 py-3.5 sm:w-auto"
-            >
+            <Button type="submit" loading={loading} onClick={form.handleSubmit(onSubmit)} size="sm">
               {t('save_changes')}
             </Button>
           )}

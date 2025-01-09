@@ -24,7 +24,7 @@ export default function ProfileImages() {
 
   return (
     <div className="relative flex flex-col items-center gap-6 md:flex-row md:items-end">
-      <div className="bg-custom-profile-image-gradient relative flex h-[10rem] w-[10rem] cursor-pointer items-center justify-center overflow-hidden rounded-[35px]">
+      <div className="relative flex h-[80px] w-[80px] cursor-pointer items-center justify-center overflow-hidden rounded-200 border border-gray-200">
         {fileImage ? (
           <Image
             alt="user"
@@ -49,26 +49,23 @@ export default function ProfileImages() {
       )}
 
       {fileImage && !isfileUpload && (
-        <Button onClick={() => setFileImage(null)} className="px-4 py-3.5">
+        <Button className="-mt-4" onClick={() => setFileImage(null)} size="sm">
           {t('delete')}
         </Button>
       )}
       <div className="flex flex-col items-start gap-4">
         {isfileUpload && (
-          <div className="space-x-3">
-            <Button
-              type="button"
-              className="!text-size_title_md_ds !px-5 !py-1.5"
-              loading={loading}
-              onClick={onSubmit}
-            >
+          <div className="flex flex-col gap-2">
+            <Button type="button" size="sm" loading={loading} onClick={onSubmit}>
               {t('submit')}
             </Button>
             <Button
-              // onClick={() => {
-              //   setFileImage(null), setIsfileUpload(false)
-              // }}`
-              className="!text-size_title_md_ds !px-4 !py-1"
+              onClick={() => {
+                setFileImage(null)
+                setIsfileUpload(false)
+              }}
+              size="sm"
+              variant="outline"
             >
               {t('cancel')}
             </Button>

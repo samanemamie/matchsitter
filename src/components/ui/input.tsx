@@ -24,8 +24,12 @@ const inputContainer = cva(
         ],
         default: [
           'default',
-          'border-border-100 focus-within:border-primary', //override
+          'border-border-100 focus-within:border-primary disabled:[&>input]:select-none disabled:[&>input]:text-body-100 disabled:[&>input]:opacity-50 disabled:[&>input]:placeholder:text-body-100', //override
         ],
+      },
+      disabled: {
+        true: ['border-border-100'],
+        false: [''],
       },
       variant: {
         default: ['focus-within:border-2'],
@@ -65,7 +69,7 @@ export default function Input({
   id = id || _id
   const [isVisible, setIsVisible] = useState(false)
   const [type] = useState(() => Type)
-  const inputClassNames = inputContainer({ color, variant })
+  const inputClassNames = inputContainer({ color, variant, disabled })
 
   const PasswordToggle = (
     <IconBox onClick={() => setIsVisible((p) => !p)} role="button">

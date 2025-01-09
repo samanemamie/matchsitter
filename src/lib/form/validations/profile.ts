@@ -38,8 +38,9 @@ export const profilePassword = z
 
 export const profile = z.object({
   full_name: z.string(errorMapConfig({ message: 'This field is required.' })).min(1),
-  nick_name: z.string(errorMapConfig({ message: 'This field is required.' })).min(1),
+
   email: z
     .string(errorMapConfig({ message: 'This field is required.' }))
-    .email({ message: 'Invalid email address' }),
+    .email({ message: 'Invalid email address' })
+    .optional(),
 })
